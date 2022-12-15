@@ -1,0 +1,74 @@
+html{
+    direction: rtl;
+}
+.atf-top-header-list li{
+    margin-right: 0px;
+    margin-left: 30px;
+}
+.atf-top-header-list li i {
+    margin-right: 0px;
+    margin-left: 10px;
+}
+#step-steps .steps .setup-content .nextBtn{
+    float: left;
+}
+#abou-company .about-content .about-image{
+    left: 0;
+    right: -7%;
+}
+#footer .single-col .atf-themes-btn{
+    margin-right: 0 !important;
+}
+#footer .single-col.linked-page .list-link li{
+    text-align: right;
+}
+
+#feature .atf-single-feature{
+    padding: 70px 30px 70px 10px;
+}
+#Services .atf-single-feature{
+    padding: 70px 40px 70px 20px;
+}
+#abou-company .about-content .about-us .single-col p{
+    text-align: right;
+}
+
+/*******************************************************************************/
+@media (min-width: 300px) and (max-width: 766.5px){
+    #footer .single-col .atf-themes-btn,
+    #GetinTouch .atf-themes-btn,
+    #abou-company .about-content .about-text .atf-main-btn{
+        margin-right: 0 !important;
+    }
+    #abou-company .about-content .about-image {
+        left: 0;
+        right: 174px;
+    }
+    #footer .single-col.linked-page .list-link.float-right {
+        margin-right: 10px;
+    }
+    #footer .single-col.linked-page .list-link.float-left.edit-margin{
+       
+        margin-left: 110px;
+    }
+}
+
+
+
+@media(min-width:768px) and (max-width:1024px){
+    #abou-company .about-content .about-image {
+        left: 0;
+        right: -4%;
+    }
+}
+
+@media(min-width:1024px) and (max-width:1300px){
+
+}
+
+@media(min-width: 1400px) {
+    #abou-company .about-content .about-image {
+        left: 0;
+        right: -5%;
+    }
+}

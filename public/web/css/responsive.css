@@ -1,0 +1,575 @@
+@media only screen and (max-width : 2500px) {
+	.page-wrapper{
+		overflow:hidden;
+	}
+	
+}
+@media only screen and (max-width : 992px) {
+
+	.atf-single-text h1{
+		font-size:40px;
+	}
+	.atf-call-image img {
+		margin-top: 0px;
+	}
+
+}
+@media only screen and (max-width : 991px) {
+	.atf-single-text h1{
+		font-size:35px;
+	}
+	.atf-single-feature{
+		margin:15px 0;
+	}
+	.atf-pricing-item{
+		margin:15px 0;
+	}
+	.atf-about-inner{
+		padding-top:40px;
+	}
+	.atf-counter {
+		margin: 15px 0;
+	}
+	.atf-service-991{
+		padding-top:40px;	
+	}
+	.atf-call-image{
+		padding-top:40px;	
+	}
+	.atf-blog-area .atf-single-blog img{
+		width:100%;
+	}
+	.atf-work-area{
+		margin-top:30px;
+		padding-left:0;
+	}
+	.atf-blog-area .atf-single-blog{
+		margin: 15px 0px;
+	}
+	.atf-footer-link{
+		margin: 15px 0px;
+	}
+	.atf-mailchamp-headding h2{
+		font-size:25px;
+	}
+	.contact{
+		margin-top:40px;
+	}
+
+}
+@media only screen and (max-width: 767px) {
+	.atf-feature-text{
+		margin-top:15px;
+	}
+	.atf-section-title p {
+		width: 100%;
+	}
+	.atf-grid-portfolio{
+		width:50%;
+	}
+	#portfolio .atf-portfolio-nav {
+		position: relative;
+		bottom: 20px;
+	}
+	#portfolio .atf-portfolio-nav .nav {
+		display: block;
+		text-align: center;
+	}
+	#portfolio .atf-portfolio-nav .nav li {
+		float: none;
+		display: inline-block;
+		margin:6px 7px;
+	}
+	.atf-blog-area .atf-single-blog img{
+		width:100%;
+	}
+	.form-message{
+		padding-bottom:30px;
+	}
+	#atf-map-area {
+		margin-bottom: 0px;
+	}
+
+/*****************************************************/
+.atf-main-header .atf-main-header-left{
+	width: 160px;
+}
+#home h3{
+	font-size: 22px;
+    line-height: 40px;
+    width: 90%;
+}
+#home p{
+	font-size: 18px;
+    width: 94%;
+}
+#step-steps .step-container .stepwizard{
+	width: 100%;
+}
+#step-steps .step-container .btn-circle{
+	font-size: 12px;
+}
+#step-steps .step-container .btn-primary{
+	padding-bottom: 8px;
+}
+#step-steps .steps .setup-content h3{
+	margin-bottom: 15px;
+    margin-top: 25px;
+}
+#step-steps .steps .setup-content p{
+	font-size: 14px;
+}
+#GetinTouch .image {
+    width: 372px;
+    height: 250px;
+}
+#GetinTouch .text h4{
+	font-size: 20px;
+}
+#GetinTouch .atf-themes-btn{
+	margin-top: 0;
+}
+#portfolio .filter a{
+	padding: 0.7em 0.5em;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+#portfolio .box .image{
+	height: 170px;
+	margin-bottom: 15px;
+}
+#portfolio .box {
+    margin-bottom: 30px;
+}
+#portfolio .box p{
+	font-size: 9px;
+}
+#abou-company .about-content{
+	min-height: 1500px;
+    max-height: 2200px;
+	padding: 80px 20px;
+}
+#abou-company .about-content .about-image{
+	width: 200px;
+    height: 200px;
+	top: -5%;
+    left: -2%;
+}
+#abou-company .about-content .about-text h2{
+	font-size: 34px;
+    padding: 9px;
+}
+#abou-company .about-content .about-text h6{
+	font-size: 25px;
+}
+#abou-company .about-content .about-text p{
+	font-size: 14px;
+}
+#atf-map-area .content-form{
+	width: 95%;
+	right: 2%;
+	padding: 30px 20px;
+}
+#atf-map-area .content-form h3{
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+#atf-map-area .content-form p{
+	font-size: 12px;
+    margin-bottom: 19px;
+}
+#atf-map-area .content-form #contact-form input{
+	height: 50px;
+}
+#footer .single-col{
+	margin-bottom: 25px;
+}
+#footer .single-col h6{
+	font-size: 18px;
+	margin-bottom: 15px;
+}
+#footer .single-col p {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+#footer .single-col.linked-page {
+    margin-left: 7px;
+}
+#footer .single-col.linked-page .list-link.float-right {
+    margin-right: 129px;
+}
+#footer .single-col .phone-num{
+	width: 54%;
+    padding: 10px 0;
+}
+#footer .top-footer{
+	padding-bottom: 30px;
+}
+}
+
+@media only screen and (max-width: 576px) {
+	.atf-mailchamp-headding h2 {
+		font-size: 20px;
+		text-align: center;
+	}
+	.atf-contact-info{
+		margin-right:0;
+	}
+	.atf-grid-portfolio{
+		width:100%;
+	}
+	.atf-post-details.atf-style1 .embed-responsive{
+		display:none;
+	}
+	.atf-main-header .atf-main-header-left{
+		width: 160px;
+	}
+	#home h3{
+		font-size: 22px;
+		line-height: 40px;
+		width: 90%;
+	}
+	#home p{
+		font-size: 18px;
+		width: 94%;
+	}
+	#step-steps .step-container .stepwizard{
+		width: 100%;
+	}
+	#step-steps .step-container .btn-circle{
+		font-size: 12px;
+	}
+	#step-steps .step-container .btn-primary{
+		padding-bottom: 8px;
+	}
+	#step-steps .steps .setup-content h3{
+		margin-bottom: 15px;
+		margin-top: 25px;
+	}
+	#step-steps .steps .setup-content p{
+		font-size: 14px;
+	}
+	#GetinTouch .image {
+		width: 372px;
+		height: 250px;
+	}
+	#GetinTouch .text h4{
+		font-size: 20px;
+	}
+	#GetinTouch .atf-themes-btn{
+		margin-top: 0;
+	}
+	#portfolio .filter a{
+		padding: 0.7em 0.5em;
+		font-size: 14px;
+		margin-bottom: 10px;
+	}
+	#portfolio .box .image{
+		height: 170px;
+		margin-bottom: 15px;
+	}
+	#portfolio .box {
+		margin-bottom: 30px;
+	}
+	#portfolio .box p{
+		font-size: 9px;
+	}
+	#abou-company .about-content{
+		min-height: 1500px;
+		max-height: 2200px;
+		padding: 80px 20px;
+	}
+	#abou-company .about-content .about-image{
+		width: 200px;
+		height: 200px;
+		top: -5%;
+		left: -2%;
+	}
+	#abou-company .about-content .about-text h2{
+		font-size: 34px;
+		padding: 9px;
+	}
+	#abou-company .about-content .about-text h6{
+		font-size: 25px;
+	}
+	#abou-company .about-content .about-text p{
+		font-size: 14px;
+	}
+	#atf-map-area .content-form{
+		width: 95%;
+		right: 2%;
+		padding: 30px 20px;
+	}
+	#atf-map-area .content-form h3{
+		font-size: 30px;
+		margin-bottom: 20px;
+	}
+	#atf-map-area .content-form p{
+		font-size: 12px;
+		margin-bottom: 19px;
+	}
+	#atf-map-area .content-form #contact-form input{
+		height: 50px;
+	}
+	#footer .single-col{
+		margin-bottom: 25px;
+	}
+	#footer .single-col h6{
+		font-size: 18px;
+		margin-bottom: 15px;
+	}
+	#footer .single-col p {
+		font-size: 12px;
+		margin-bottom: 5px;
+	}
+	#footer .single-col.linked-page {
+		margin-left: 7px;
+	}
+	#footer .single-col.linked-page .list-link.float-right {
+		margin-right: 129px;
+	}
+	#footer .single-col .phone-num{
+		width: 54%;
+		padding: 10px 0;
+	}
+	#footer .top-footer{
+		padding-bottom: 30px;
+	}
+}
+
+@media screen and (max-width: 320px) and (min-width: 0px){
+	.atf-contact-details{
+		margin:15px 0;
+	}
+	.atf-main-header .atf-main-header-left{
+		width: 160px;
+	}
+	#home h3{
+		font-size: 22px;
+		line-height: 40px;
+		width: 90%;
+	}
+	#home p{
+		font-size: 18px;
+		width: 94%;
+	}
+	#step-steps .step-container .stepwizard{
+		width: 100%;
+	}
+	#step-steps .step-container .btn-circle{
+		font-size: 12px;
+	}
+	#step-steps .step-container .btn-primary{
+		padding-bottom: 8px;
+	}
+	#step-steps .steps .setup-content h3{
+		margin-bottom: 15px;
+		margin-top: 25px;
+	}
+	#step-steps .steps .setup-content p{
+		font-size: 14px;
+	}
+	#GetinTouch .image {
+		width: 372px;
+		height: 250px;
+	}
+	#GetinTouch .text h4{
+		font-size: 20px;
+	}
+	#GetinTouch .atf-themes-btn{
+		margin-top: 0;
+	}
+	#portfolio .filter a{
+		padding: 0.7em 0.5em;
+		font-size: 14px;
+		margin-bottom: 10px;
+	}
+	#portfolio .box .image{
+		height: 170px;
+		margin-bottom: 15px;
+	}
+	#portfolio .box {
+		margin-bottom: 30px;
+	}
+	#portfolio .box p{
+		font-size: 9px;
+	}
+	#abou-company .about-content{
+		min-height: 1500px;
+		max-height: 2200px;
+		padding: 80px 20px;
+	}
+	#abou-company .about-content .about-image{
+		width: 200px;
+		height: 200px;
+		top: -5%;
+		left: -2%;
+	}
+	#abou-company .about-content .about-text h2{
+		font-size: 34px;
+		padding: 9px;
+	}
+	#abou-company .about-content .about-text h6{
+		font-size: 25px;
+	}
+	#abou-company .about-content .about-text p{
+		font-size: 14px;
+	}
+	#atf-map-area .content-form{
+		width: 95%;
+		right: 2%;
+		padding: 30px 20px;
+	}
+	#atf-map-area .content-form h3{
+		font-size: 30px;
+		margin-bottom: 20px;
+	}
+	#atf-map-area .content-form p{
+		font-size: 12px;
+		margin-bottom: 19px;
+	}
+	#atf-map-area .content-form #contact-form input{
+		height: 50px;
+	}
+	#footer .single-col{
+		margin-bottom: 25px;
+	}
+	#footer .single-col h6{
+		font-size: 18px;
+		margin-bottom: 15px;
+	}
+	#footer .single-col p {
+		font-size: 12px;
+		margin-bottom: 5px;
+	}
+	#footer .single-col.linked-page {
+		margin-left: 7px;
+	}
+	#footer .single-col.linked-page .list-link.float-right {
+		margin-right: 129px;
+	}
+	#footer .single-col .phone-num{
+		width: 54%;
+		padding: 10px 0;
+	}
+	#footer .top-footer{
+		padding-bottom: 30px;
+	}
+}
+
+
+/***********************************Ipad*************************/
+@media(min-width:768px) and (max-width:1024px){
+	.atf-main-header .atf-main-header-left{
+		width: 160px;
+		padding-left: 10px;
+	}
+	#home .offset-lg-2{
+		margin-left: unset !important;
+		margin:0 auto !important;
+		width: 100%;
+	}
+	#home h3{
+		width: 100%;
+		font-size: 36px;
+
+	}
+	#home p{
+		width: 100%;
+	}
+	#step-steps .step-container .stepwizard{
+		width: 85%;
+		margin: 0 auto 65px;
+	}
+	#step-steps .step-container .btn-circle{
+		font-size: 14px;
+	}
+	#step-steps .steps .setup-content p{
+		font-size: 14px;
+		margin-bottom: 20px;
+	}
+	#GetinTouch .image {
+		width: 348px;
+		height: 258px;
+    margin-top: 22px;
+	}
+	#GetinTouch .text h4{
+		font-size: 19px;
+	}
+	#GetinTouch .text p{
+		font-size: 14px;
+	}
+	#GetinTouch .atf-themes-btn{
+        margin:0 !important;
+	}
+	#portfolio .box .image{
+		height: 200px;
+	}
+	#portfolio .box p{
+		font-size: 12px;
+	}
+	#portfolio .atf-themes-btn{
+		margin:0 !important;
+	}
+	#abou-company .about-content .about-image{
+		width: 330px;
+    height: 330px;
+	   top: -3%;
+    left: -37px;
+	}
+	#abou-company .about-content .about-text p{
+		font-size: 14px;
+	}
+	#abou-company .about-content .about-us .single-col{
+		padding: 40px 12px 15px;
+		height: 425px;
+	}
+	#abou-company .about-content .about-us .single-col h5{
+		font-size: 35px;
+		margin-bottom: 20px;
+	}
+	#abou-company .about-content .about-us .single-col h4{
+		font-size: 27px;
+		margin-bottom: 15px;
+	}
+	#abou-company .about-content .about-us .single-col p{
+		font-size: 13px;
+	}
+	#atf-map-area .content-form{
+		width: 60%;
+	}
+	#atf-map-area .content-form{
+		width: 60%;
+		padding: 60px 20px;
+		right: 3%;
+	}
+	#atf-map-area .content-form h3{
+		font-size: 45px;
+    margin-bottom: 30px;
+	}
+	#atf-map-area .content-form p{
+		font-size: 14px;
+		margin-bottom: 25px;
+	}
+	#footer .single-col h6{
+		font-size: 12px;
+		margin-bottom: 10px;
+	}
+	#footer .single-col.linked-page .list-link.float-right {
+		margin-right: 0;
+		margin-left: 0;
+	}
+	#footer .single-col.linked-page .list-link li a{
+		font-size: 10px;
+	}
+	#footer .single-col .phone-num{
+		width: 100%;
+    padding: 10px 0;
+	}
+	#footer .atf-themes-btn{
+		width: 160px;
+	}
+	#footer .top-footer{
+		padding-bottom: 30px;
+	}
+}
