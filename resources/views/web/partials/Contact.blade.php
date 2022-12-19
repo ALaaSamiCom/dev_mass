@@ -1,8 +1,9 @@
 <!-- Google Map start-->
 <div id="atf-map-area">
-    <iframe style="border:0"
-        src="https://maps.google.com/maps?width=100%25&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-        allowfullscreen=""></iframe>
+{{--    <iframe style="border:0"--}}
+{{--        src="https://maps.google.com/maps?width=100%25&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"--}}
+{{--        allowfullscreen=""></iframe>--}}
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.9885397503363!2d46.62964721499956!3d24.692920684133203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf9445380b3855035!2zMjTCsDQxJzM0LjUiTiA0NsKwMzcnNTQuNiJF!5e0!3m2!1sen!2ssa!4v1671451064095!5m2!1sen!2ssa" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     <div class="content-form">
         <h3>{{$section->title}}</h3>
         <p>{!!$section->description!!}
