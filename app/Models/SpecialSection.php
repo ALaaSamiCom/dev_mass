@@ -26,7 +26,7 @@ class SpecialSection extends Model implements HasMedia
     public const SECTION_PLACE_SELECT = [
         'choose' => 'why choose us?',
         'Services' => 'Our Services',
-        'step' => 'Step By Step?',
+        'Step' => 'Step By Step?',
         'touch' => 'get in touch',
         'Portfolio' => 'Portfolio',
         'about' => 'About Our Company',
