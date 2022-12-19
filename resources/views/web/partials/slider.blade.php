@@ -13,11 +13,13 @@
 
 						<p class="">{!!$slider->description!!}</p>
 						<!-- Main-btn -->
+						@if (isset($slider->link))
 						<div class="atf-main-btn atf-main-btn2 mt-3">
-							<a href="https://www.templatemonster.com/landing-page-template/al-mujib-multipurpose-busniess-amp-consulting-agency-landing-page-template-145313.html"
-								class="page-scroll atf-themes-btn mr-4"><span></span><span></span><span></span><span></span>Discover
-								more <i class="fa fa-angle-right ml-2"></i></a>
+							<a href="{{$slider->link}}"
+								class="page-scroll atf-themes-btn mr-4"><span></span><span></span><span></span><span></span>@lang('web.discover_more') <i class="fa fa-angle-right ml-2"></i></a>
 						</div>
+						@endif
+						
 					</div>
 					<!--- END COL -->
 				</div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html dir="@lang('global.dir')">
 
 <head>
     <meta charset="UTF-8">

@@ -17,9 +17,9 @@
         </div>
         <!------------------------------------Tabs----------------------------------------->
         <div class="filter">
-            <a class="all current" href="#">@lang('web.show_All')</a>
+            <a class="all current" href="#">Show All</a>
             @forelse ($categories as $category)           
-                <a class="{{$category->id}}" href="#">{{$category->title}}</a>                
+                <a class="{{$category->title}}" href="#">{{$category->title}}</a>                
             @empty
                 <a class="one" href="#">web</a>
                 <a class="two" href="#">Mobile Apps</a>
@@ -31,9 +31,9 @@
             <div class="row">
                 @forelse ($products as $product)
                     <div class="col-6 col-sm-6 col-md-4">
-                        <div class="box {{$product->category->id}}">
+                        <div class="box {{$product->category->title}}">
                             <div class="image">
-                                <img src="{{$product->image->geturl()}}" />
+                                <img src="assets/img/Qalam -Website.png">
                             </div>
                             <h6>{{$product->title}}</h6>
                             <p>{{$product->short_description}}</p>
@@ -54,8 +54,9 @@
 
         </div>
         <div class="atf-main-btn atf-main-btn2 mt-3">
-            <a href="{{URL(app()->getLocale().'/product')}}"
-                class="page-scroll atf-themes-btn mr-4"><span></span><span></span><span></span><span></span>@lang('web.discover_more')<i class="fa fa-angle-right ml-2"></i></a>
+            <a href="https://www.templatemonster.com/landing-page-template/al-mujib-multipurpose-busniess-amp-consulting-agency-landing-page-template-145313.html"
+                class="page-scroll atf-themes-btn mr-4"><span></span><span></span><span></span><span></span>Discover
+                more <i class="fa fa-angle-right ml-2"></i></a>
         </div>
     </div>
 </section>

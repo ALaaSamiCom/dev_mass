@@ -102,55 +102,29 @@
 
 				});
 
+				@forelse ($categories as $category)	
+					$filter.on('click touch', '.{{$category->id}}', function (e) {
+						e.preventDefault();
+						$tab.removeClass('current');
+						$(this).addClass('current');
 
+						$offers.show();
+						$offers.fadeOut(400);
+						$offers.filter('.{{$category->id}}').fadeIn(400);
+
+					});
+				@empty
 				$filter.on('click touch', '.one', function (e) {
-					e.preventDefault();
-					$tab.removeClass('current');
-					$(this).addClass('current');
+						e.preventDefault();
+						$tab.removeClass('current');
+						$(this).addClass('current');
 
-					$offers.show();
-					$offers.fadeOut(400);
-					$offers.filter('.one').fadeIn(400);
+						$offers.show();
+						$offers.fadeOut(400);
+						$offers.filter('.one').fadeIn(400);
 
-				});
-
-
-
-				$filter.on('click touch', '.two', function (e) {
-					e.preventDefault();
-					$tab.removeClass('current');
-					$(this).addClass('current');
-
-					$offers.show();
-					$offers.fadeOut(400);
-					$offers.filter('.two').fadeIn(400);
-
-				});
-
-
-
-				$filter.on('click touch', '.three', function (e) {
-					e.preventDefault();
-					$tab.removeClass('current');
-					$(this).addClass('current');
-
-					$offers.show();
-					$offers.fadeOut(400);
-					$offers.filter('.three').fadeIn(400);
-
-				});
-
-				$filter.on('click touch', '.four', function (e) {
-					e.preventDefault();
-					$tab.removeClass('current');
-					$(this).addClass('current');
-
-					$offers.show();
-					$offers.fadeOut(400);
-					$offers.filter('.four').fadeIn(400);
-
-				});
-
+					});
+				@endforelse
 
 
 

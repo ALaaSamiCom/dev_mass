@@ -5,14 +5,14 @@
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-3">
                     <div class="single-col">
-                        <h6 class="web-title">DEVUN Co. For Electronic Services</h6>
-                        <p class="address">Airport Road, King Khalid International Airport, Riyadh 11564</p>
-                        <p class="email">Email: info@DEVUN.com</p>
+                        <h6 class="web-title">@lang('web.DEVUN')</h6>
+                        <p class="address">@lang('web.Airport')</p>
+                        <p class="email">@lang('web.Email'):{{$setting->email}}</p>
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-3">
                     <div class="single-col linked-page clearfix">
-                        <h6 class="web-title">Navigation</h6>
+                        <h6 class="web-title">@lang('web.navigation')</h6>
                         <ul class="list-link float-left">
                             <li>
                                 <a href="#">Home</a>
@@ -39,16 +39,16 @@
                 </div>
                 <div class="col-12 col-sm-12 col-md-3">
                     <div class="single-col linked-page clearfix">
-                        <h6 class="web-title">Information</h6>
+                        <h6 class="web-title">@lang('web.Information')</h6>
                         <ul class="list-link float-left">
                             <li>
-                                <a href="#">Work Days</a>
+                                <a href="#">@lang('web.Work_Days')</a>
                             </li>
                             <li>
-                                <a href="#">Sataurday</a>
+                                <a href="#">@lang('web.Sataurday')</a>
                             </li>
                             <li>
-                                <a href="#">Friday</a>
+                                <a href="#">@lang('web.Friday')</a>
                             </li>
                         </ul>
                         <ul class="list-link float-right">
@@ -56,22 +56,22 @@
                                 <a href="#">8am - 3pm</a>
                             </li>
                             <li>
-                                <a href="#">Closed</a>
+                                <a href="#">@lang('web.Closed')</a>
                             </li>
                             <li>
-                                <a href="#">Closed</a>
+                                <a href="#">@lang('web.Closed')</a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-3">
                     <div class="single-col">
-                        <h6 class="web-title">Contact</h6>
-                        <p class="phone-num">+966530292300</p>
+                        <h6 class="web-title">@lang('web.Contact')</h6>
+                        <p class="phone-num">{{$setting->phone}}</p>
                         <div class="atf-main-btn atf-main-btn2 mt-3">
                             <a href="https://www.templatemonster.com/landing-page-template/al-mujib-multipurpose-busniess-amp-consulting-agency-landing-page-template-145313.html"
-                                class="page-scroll atf-themes-btn mr-4"><span></span><span></span><span></span><span></span>Get
-                                in Touch <i class="fa fa-angle-right ml-2"></i></a>
+                                class="page-scroll atf-themes-btn mr-4"><span></span><span></span><span></span><span></span>
+                                @lang('web.get_in_Touch')<i class="fa fa-angle-right ml-2"></i></a>
                         </div>
                     </div>
                 </div>

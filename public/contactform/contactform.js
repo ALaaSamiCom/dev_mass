@@ -114,8 +114,7 @@ jQuery(document).ready(function($) {
           $('#'+idd).find("input[name$='shippingcount'],input[name$='title'], textarea").val("");
           $('#'+idd).find("input[name$='address'],input[name$='title'], textarea").val("");
           $('#'+idd).find("input[name$='nationality'],input[name$='title'], textarea").val("");
-
-
+          $('#'+idd).find("input[name$='message'],input[name$='title'], textarea").val("");
 
           $('#'+idd).find("input[name$='mobile'],input[name$='title'], textarea").val("");
           $('#'+idd).find("input[name$='fullname'],input[name$='title'], textarea").val("");

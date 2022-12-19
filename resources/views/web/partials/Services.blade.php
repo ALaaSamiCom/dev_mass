@@ -6,7 +6,7 @@
                 <div class="atf-section-title text-center wow fadeInUp" data-wow-duration="1s"
                     data-wow-delay="0.3s" data-wow-offset="0"
                     style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeInUp;">
-                    <h2 class="">Our Services</h2>
+                    <h2 class="">{{$section->title}}</h2>
                     <div class="atf-sec_icon my-3"><span></span><span
                             class="atf-sec_radius"></span><span></span></div>
                 </div>
@@ -16,6 +16,7 @@
         <!--- END ROW -->
 
         <div class="row clearfix">
+            @forelse ($services as $service)
             <div class="col-lg-4 col-md-6 atf-blog-feature">
                 <div class="atf-single-feature wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s"
                     data-wow-offset="0"
@@ -52,15 +53,17 @@
                         </svg>
 
                     </span>
-                    <h3>Web Design & development</h3>
-                    <p> we are professionally designing and developing an innovative e-experience to deliver
-                        your services to your audience through your e-platform
+                    <h3>{{$service->title}}</h3>
+                    <p> {!!$service->description!!}
 
                     </p>
                 </div>
             </div>
             <!--- END COL -->
 
+                
+            @empty
+        
             <div class="col-lg-4 col-md-6 atf-blog-feature">
                 <div class="atf-single-feature wow fadeIn" data-wow-duration="2s" data-wow-delay="0.4s"
                     data-wow-offset="0"
@@ -121,138 +124,8 @@
                 </div>
             </div>
             <!--- END COL -->
-            <div class="col-lg-4 col-md-6 atf-blog-feature">
-                <div class="atf-single-feature wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s"
-                    data-wow-offset="0"
-                    style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn;">
-                    <span class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            width="81.2" height="81.2" viewBox="0 0 81.2 81.2">
-                            <defs>
-                                <clipPath id="clip-path">
-                                    <rect id="Rectangle_132" data-name="Rectangle 132" width="81.2"
-                                        height="81.2" fill="none" />
-                                </clipPath>
-                            </defs>
-                            <g id="Group_446" data-name="Group 446" transform="translate(0 0)">
-                                <g id="Group_445" data-name="Group 445" transform="translate(0 0)"
-                                    clip-path="url(#clip-path)">
-                                    <path id="Path_1358" data-name="Path 1358"
-                                        d="M40.6,0A40.6,40.6,0,1,1,0,40.6,40.6,40.6,0,0,1,40.6,0"
-                                        transform="translate(0 -0.001)" fill="#e64a19" fill-rule="evenodd" />
-                                    <path id="Path_1359" data-name="Path 1359"
-                                        d="M8.734,16.769V14.642l9.219-5.194v2.265l-7.311,4.005,7.311,4.041v2.272Zm25.974,0-9.216,5.262V19.759l7.3-4.041-7.3-4.005V9.448l9.216,5.194Z"
-                                        transform="translate(19.409 20.995)" fill="#fffffe" />
-                                    <path id="Path_1360" data-name="Path 1360"
-                                        d="M5.958,6.573H52.052a.74.74,0,0,1,.741.744V39.8a.742.742,0,0,1-.741.744H5.958a.744.744,0,0,1-.741-.744V7.317a.742.742,0,0,1,.741-.744m45.35,1.489H6.7V39.056H51.308Z"
-                                        transform="translate(11.593 14.606)" fill="#fffffe" />
-                                    <path id="Path_1361" data-name="Path 1361"
-                                        d="M11.769,16.653h8.658a.745.745,0,0,1,.744.744v4.872a.745.745,0,0,1-.744.744H11.769a.745.745,0,0,1-.744-.744V17.4a.745.745,0,0,1,.744-.744m7.917,1.489H12.51v3.387h7.176Z"
-                                        transform="translate(24.5 37.006)" fill="#fffffe" />
-                                    <path id="Path_1362" data-name="Path 1362"
-                                        d="M9.54,18.166a.743.743,0,0,0,0,1.485H32.55a.743.743,0,0,0,0-1.485Z"
-                                        transform="translate(19.553 40.368)" fill="#fffffe" />
-                                </g>
-                            </g>
-                        </svg>
-
-                    </span>
-                    <h3>Web Design & development</h3>
-                    <p> we are professionally designing and developing an innovative e-experience to deliver
-                        your services to your audience through your e-platform
-
-                    </p>
-                </div>
-            </div>
-            <!--- END COL -->
-
-            <div class="col-lg-4 col-md-6 atf-blog-feature">
-                <div class="atf-single-feature wow fadeIn" data-wow-duration="2s" data-wow-delay="0.4s"
-                    data-wow-offset="0"
-                    style="visibility: visible; animation-duration: 2s; animation-delay: 0.4s; animation-name: fadeIn;">
-                    <span class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            width="81.2" height="81.2" viewBox="0 0 81.2 81.2">
-                            <defs>
-                                <clipPath id="clip-path">
-                                    <rect id="Rectangle_132" data-name="Rectangle 132" width="81.2"
-                                        height="81.2" fill="none" />
-                                </clipPath>
-                            </defs>
-                            <g id="Group_446" data-name="Group 446" transform="translate(0 0)">
-                                <g id="Group_445" data-name="Group 445" transform="translate(0 0)"
-                                    clip-path="url(#clip-path)">
-                                    <path id="Path_1358" data-name="Path 1358"
-                                        d="M40.6,0A40.6,40.6,0,1,1,0,40.6,40.6,40.6,0,0,1,40.6,0"
-                                        transform="translate(0 -0.001)" fill="#e64a19" fill-rule="evenodd" />
-                                    <path id="Path_1359" data-name="Path 1359"
-                                        d="M8.734,16.769V14.642l9.219-5.194v2.265l-7.311,4.005,7.311,4.041v2.272Zm25.974,0-9.216,5.262V19.759l7.3-4.041-7.3-4.005V9.448l9.216,5.194Z"
-                                        transform="translate(19.409 20.995)" fill="#fffffe" />
-                                    <path id="Path_1360" data-name="Path 1360"
-                                        d="M5.958,6.573H52.052a.74.74,0,0,1,.741.744V39.8a.742.742,0,0,1-.741.744H5.958a.744.744,0,0,1-.741-.744V7.317a.742.742,0,0,1,.741-.744m45.35,1.489H6.7V39.056H51.308Z"
-                                        transform="translate(11.593 14.606)" fill="#fffffe" />
-                                    <path id="Path_1361" data-name="Path 1361"
-                                        d="M11.769,16.653h8.658a.745.745,0,0,1,.744.744v4.872a.745.745,0,0,1-.744.744H11.769a.745.745,0,0,1-.744-.744V17.4a.745.745,0,0,1,.744-.744m7.917,1.489H12.51v3.387h7.176Z"
-                                        transform="translate(24.5 37.006)" fill="#fffffe" />
-                                    <path id="Path_1362" data-name="Path 1362"
-                                        d="M9.54,18.166a.743.743,0,0,0,0,1.485H32.55a.743.743,0,0,0,0-1.485Z"
-                                        transform="translate(19.553 40.368)" fill="#fffffe" />
-                                </g>
-                            </g>
-                        </svg>
-
-                    </span>
-                    <h3>Apps Design & Development</h3>
-                    <p>We offer you the possibility of designing and programming your mobile application with
-                        the best modern designs for the application interface and with high quality. Contact Us.
-                    </p>
-                </div>
-            </div>
-            <!--- END COL -->
-
-            <div class="col-lg-4 col-md-6 atf-blog-feature">
-                <div class="atf-single-feature wow fadeIn" data-wow-duration="3s" data-wow-delay="0.5s"
-                    data-wow-offset="0"
-                    style="visibility: visible; animation-duration: 3s; animation-delay: 0.5s; animation-name: fadeIn;">
-                    <span class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            width="81.2" height="81.2" viewBox="0 0 81.2 81.2">
-                            <defs>
-                                <clipPath id="clip-path">
-                                    <rect id="Rectangle_132" data-name="Rectangle 132" width="81.2"
-                                        height="81.2" fill="none" />
-                                </clipPath>
-                            </defs>
-                            <g id="Group_446" data-name="Group 446" transform="translate(0 0)">
-                                <g id="Group_445" data-name="Group 445" transform="translate(0 0)"
-                                    clip-path="url(#clip-path)">
-                                    <path id="Path_1358" data-name="Path 1358"
-                                        d="M40.6,0A40.6,40.6,0,1,1,0,40.6,40.6,40.6,0,0,1,40.6,0"
-                                        transform="translate(0 -0.001)" fill="#e64a19" fill-rule="evenodd" />
-                                    <path id="Path_1359" data-name="Path 1359"
-                                        d="M8.734,16.769V14.642l9.219-5.194v2.265l-7.311,4.005,7.311,4.041v2.272Zm25.974,0-9.216,5.262V19.759l7.3-4.041-7.3-4.005V9.448l9.216,5.194Z"
-                                        transform="translate(19.409 20.995)" fill="#fffffe" />
-                                    <path id="Path_1360" data-name="Path 1360"
-                                        d="M5.958,6.573H52.052a.74.74,0,0,1,.741.744V39.8a.742.742,0,0,1-.741.744H5.958a.744.744,0,0,1-.741-.744V7.317a.742.742,0,0,1,.741-.744m45.35,1.489H6.7V39.056H51.308Z"
-                                        transform="translate(11.593 14.606)" fill="#fffffe" />
-                                    <path id="Path_1361" data-name="Path 1361"
-                                        d="M11.769,16.653h8.658a.745.745,0,0,1,.744.744v4.872a.745.745,0,0,1-.744.744H11.769a.745.745,0,0,1-.744-.744V17.4a.745.745,0,0,1,.744-.744m7.917,1.489H12.51v3.387h7.176Z"
-                                        transform="translate(24.5 37.006)" fill="#fffffe" />
-                                    <path id="Path_1362" data-name="Path 1362"
-                                        d="M9.54,18.166a.743.743,0,0,0,0,1.485H32.55a.743.743,0,0,0,0-1.485Z"
-                                        transform="translate(19.553 40.368)" fill="#fffffe" />
-                                </g>
-                            </g>
-                        </svg>
-
-
-                    </span>
-                    <h3>Search Engine Optimization(SEO)</h3>
-                    <p>Get more leads with SEO optimization to help you increase the number of visits, and the
-                        percentage of sales.</p>
-                </div>
-            </div>
-            <!--- END COL -->
+                
+            @endforelse
         </div>
         <!--- END ROW -->
     </div>

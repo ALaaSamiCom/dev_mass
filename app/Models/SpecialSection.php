@@ -24,13 +24,13 @@ class SpecialSection extends Model implements HasMedia
     ];
 
     public const SECTION_PLACE_SELECT = [
-        '1' => 'why choose us?',
-        '2' => 'Our Services',
-        '3' => 'Step By Step?',
-        '4' => 'get in touch',
-        '5' => 'Portfolio',
-        '6' => 'About Our Company',
-        '7' => 'Contact Form',
+        'choose' => 'why choose us?',
+        'Services' => 'Our Services',
+        'step' => 'Step By Step?',
+        'touch' => 'get in touch',
+        'Portfolio' => 'Portfolio',
+        'about' => 'About Our Company',
+        'Contact' => 'Contact Form',
     ];
 
     public $table = 'special_sections';

@@ -322,4 +322,6 @@ return [
     'leave'                          => 'مغادرة',
     'calendar'                       => 'التقويم',
     'messenger'                      => 'مراسل',
+    'dir'                            =>'rtl',
+
 ];
