@@ -38,7 +38,7 @@ class ChooseController extends Controller
         $choose = Choose::create($request->all());
 
         if ($request->input('icon', false)) {
-            $choose->addMedia(storage_path('tmp/uploads/' . basename($request->input('icon'))))->toMediaCollection('icon');
+            $choose->addMedia(public_path('uploads/' . basename($request->input('icon'))))->toMediaCollection('icon');
         }
 
         if ($media = $request->input('ck-media', false)) {
@@ -64,7 +64,7 @@ class ChooseController extends Controller
                 if ($choose->icon) {
                     $choose->icon->delete();
                 }
-                $choose->addMedia(storage_path('tmp/uploads/' . basename($request->input('icon'))))->toMediaCollection('icon');
+                $choose->addMedia(public_path('uploads/' . basename($request->input('icon'))))->toMediaCollection('icon');
             }
         } elseif ($choose->icon) {
             $choose->icon->delete();

@@ -38,7 +38,7 @@ class ServicesController extends Controller
         $service = Service::create($request->all());
 
         if ($request->input('icon', false)) {
-            $service->addMedia(storage_path('tmp/uploads/' . basename($request->input('icon'))))->toMediaCollection('icon');
+            $service->addMedia(public_path('uploads/' . basename($request->input('icon'))))->toMediaCollection('icon');
         }
 
         if ($media = $request->input('ck-media', false)) {
@@ -64,7 +64,7 @@ class ServicesController extends Controller
                 if ($service->icon) {
                     $service->icon->delete();
                 }
-                $service->addMedia(storage_path('tmp/uploads/' . basename($request->input('icon'))))->toMediaCollection('icon');
+                $service->addMedia(public_path('uploads/' . basename($request->input('icon'))))->toMediaCollection('icon');
             }
         } elseif ($service->icon) {
             $service->icon->delete();

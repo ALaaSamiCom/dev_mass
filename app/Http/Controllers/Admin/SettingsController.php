@@ -38,7 +38,7 @@ class SettingsController extends Controller
         $setting = Setting::create($request->all());
 
         if ($request->input('logo', false)) {
-            $setting->addMedia(storage_path('tmp/uploads/' . basename($request->input('logo'))))->toMediaCollection('logo');
+            $setting->addMedia(public_path('uploads/' . basename($request->input('logo'))))->toMediaCollection('logo');
         }
 
         if ($media = $request->input('ck-media', false)) {
@@ -64,7 +64,7 @@ class SettingsController extends Controller
                 if ($setting->logo) {
                     $setting->logo->delete();
                 }
-                $setting->addMedia(storage_path('tmp/uploads/' . basename($request->input('logo'))))->toMediaCollection('logo');
+                $setting->addMedia(public_path('uploads/' . basename($request->input('logo'))))->toMediaCollection('logo');
             }
         } elseif ($setting->logo) {
             $setting->logo->delete();

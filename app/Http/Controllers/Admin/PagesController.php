@@ -38,7 +38,7 @@ class PagesController extends Controller
         $page = Page::create($request->all());
 
         if ($request->input('image', false)) {
-            $page->addMedia(storage_path('tmp/uploads/' . basename($request->input('image'))))->toMediaCollection('image');
+            $page->addMedia(public_path('uploads/' . basename($request->input('image'))))->toMediaCollection('image');
         }
 
         if ($media = $request->input('ck-media', false)) {
@@ -64,7 +64,7 @@ class PagesController extends Controller
                 if ($page->image) {
                     $page->image->delete();
                 }
-                $page->addMedia(storage_path('tmp/uploads/' . basename($request->input('image'))))->toMediaCollection('image');
+                $page->addMedia(public_path('uploads/' . basename($request->input('image'))))->toMediaCollection('image');
             }
         } elseif ($page->image) {
             $page->image->delete();

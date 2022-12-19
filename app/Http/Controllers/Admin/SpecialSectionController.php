@@ -41,7 +41,7 @@ class SpecialSectionController extends Controller
         $specialSection = SpecialSection::create($request->all());
 
         if ($request->input('image', false)) {
-            $specialSection->addMedia(storage_path('tmp/uploads/' . basename($request->input('image'))))->toMediaCollection('image');
+            $specialSection->addMedia(public_path('uploads/' . basename($request->input('image'))))->toMediaCollection('image');
         }
 
         if ($media = $request->input('ck-media', false)) {
@@ -71,7 +71,7 @@ class SpecialSectionController extends Controller
                 if ($specialSection->image) {
                     $specialSection->image->delete();
                 }
-                $specialSection->addMedia(storage_path('tmp/uploads/' . basename($request->input('image'))))->toMediaCollection('image');
+                $specialSection->addMedia(public_path('uploads/' . basename($request->input('image'))))->toMediaCollection('image');
             }
         } elseif ($specialSection->image) {
             $specialSection->image->delete();

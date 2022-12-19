@@ -41,7 +41,7 @@ class ProductController extends Controller
         $product = Product::create($request->all());
 
         if ($request->input('image', false)) {
-            $product->addMedia(storage_path('tmp/uploads/' . basename($request->input('image'))))->toMediaCollection('image');
+            $product->addMedia(public_path('uploads/' . basename($request->input('image'))))->toMediaCollection('image');
         }
 
         if ($media = $request->input('ck-media', false)) {
@@ -71,7 +71,7 @@ class ProductController extends Controller
                 if ($product->image) {
                     $product->image->delete();
                 }
-                $product->addMedia(storage_path('tmp/uploads/' . basename($request->input('image'))))->toMediaCollection('image');
+                $product->addMedia(public_path('uploads/' . basename($request->input('image'))))->toMediaCollection('image');
             }
         } elseif ($product->image) {
             $product->image->delete();

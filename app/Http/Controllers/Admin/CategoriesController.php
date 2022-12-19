@@ -38,7 +38,7 @@ class CategoriesController extends Controller
         $category = Category::create($request->all());
 
         if ($request->input('image', false)) {
-            $category->addMedia(storage_path('tmp/uploads/' . basename($request->input('image'))))->toMediaCollection('image');
+            $category->addMedia(public_path('uploads/' . basename($request->input('image'))))->toMediaCollection('image');
         }
 
         if ($media = $request->input('ck-media', false)) {
@@ -64,7 +64,7 @@ class CategoriesController extends Controller
                 if ($category->image) {
                     $category->image->delete();
                 }
-                $category->addMedia(storage_path('tmp/uploads/' . basename($request->input('image'))))->toMediaCollection('image');
+                $category->addMedia(public_path('uploads/' . basename($request->input('image'))))->toMediaCollection('image');
             }
         } elseif ($category->image) {
             $category->image->delete();

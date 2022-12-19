@@ -38,7 +38,7 @@ class WorksController extends Controller
         $work = Work::create($request->all());
 
         if ($request->input('image', false)) {
-            $work->addMedia(storage_path('tmp/uploads/' . basename($request->input('image'))))->toMediaCollection('image');
+            $work->addMedia(public_path('uploads/' . basename($request->input('image'))))->toMediaCollection('image');
         }
 
         if ($media = $request->input('ck-media', false)) {
@@ -64,7 +64,7 @@ class WorksController extends Controller
                 if ($work->image) {
                     $work->image->delete();
                 }
-                $work->addMedia(storage_path('tmp/uploads/' . basename($request->input('image'))))->toMediaCollection('image');
+                $work->addMedia(public_path('uploads/' . basename($request->input('image'))))->toMediaCollection('image');
             }
         } elseif ($work->image) {
             $work->image->delete();

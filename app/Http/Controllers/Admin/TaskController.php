@@ -47,7 +47,7 @@ class TaskController extends Controller
         $task = Task::create($request->all());
         $task->tags()->sync($request->input('tags', []));
         if ($request->input('attachment', false)) {
-            $task->addMedia(storage_path('tmp/uploads/' . basename($request->input('attachment'))))->toMediaCollection('attachment');
+            $task->addMedia(public_path('uploads/' . basename($request->input('attachment'))))->toMediaCollection('attachment');
         }
 
         if ($media = $request->input('ck-media', false)) {
@@ -81,7 +81,7 @@ class TaskController extends Controller
                 if ($task->attachment) {
                     $task->attachment->delete();
                 }
-                $task->addMedia(storage_path('tmp/uploads/' . basename($request->input('attachment'))))->toMediaCollection('attachment');
+                $task->addMedia(public_path('uploads/' . basename($request->input('attachment'))))->toMediaCollection('attachment');
             }
         } elseif ($task->attachment) {
             $task->attachment->delete();

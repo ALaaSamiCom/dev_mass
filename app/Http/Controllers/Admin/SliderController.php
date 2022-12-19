@@ -38,7 +38,7 @@ class SliderController extends Controller
         $slider = Slider::create($request->all());
 
         if ($request->input('image', false)) {
-            $slider->addMedia(storage_path('tmp/uploads/' . basename($request->input('image'))))->toMediaCollection('image');
+            $slider->addMedia(public_path('uploads/' . basename($request->input('image'))))->toMediaCollection('image');
         }
 
         if ($media = $request->input('ck-media', false)) {
@@ -64,7 +64,7 @@ class SliderController extends Controller
                 if ($slider->image) {
                     $slider->image->delete();
                 }
-                $slider->addMedia(storage_path('tmp/uploads/' . basename($request->input('image'))))->toMediaCollection('image');
+                $slider->addMedia(public_path('uploads/' . basename($request->input('image'))))->toMediaCollection('image');
             }
         } elseif ($slider->image) {
             $slider->image->delete();

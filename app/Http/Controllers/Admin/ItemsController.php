@@ -41,7 +41,7 @@ class ItemsController extends Controller
         $item = Item::create($request->all());
 
         if ($request->input('image', false)) {
-            $item->addMedia(storage_path('tmp/uploads/' . basename($request->input('image'))))->toMediaCollection('image');
+            $item->addMedia(public_path('uploads/' . basename($request->input('image'))))->toMediaCollection('image');
         }
 
         if ($media = $request->input('ck-media', false)) {
@@ -71,7 +71,7 @@ class ItemsController extends Controller
                 if ($item->image) {
                     $item->image->delete();
                 }
-                $item->addMedia(storage_path('tmp/uploads/' . basename($request->input('image'))))->toMediaCollection('image');
+                $item->addMedia(public_path('uploads/' . basename($request->input('image'))))->toMediaCollection('image');
             }
         } elseif ($item->image) {
             $item->image->delete();

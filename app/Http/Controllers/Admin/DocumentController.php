@@ -41,7 +41,7 @@ class DocumentController extends Controller
         $document = Document::create($request->all());
 
         if ($request->input('document_file', false)) {
-            $document->addMedia(storage_path('tmp/uploads/' . basename($request->input('document_file'))))->toMediaCollection('document_file');
+            $document->addMedia(public_path('uploads/' . basename($request->input('document_file'))))->toMediaCollection('document_file');
         }
 
         if ($media = $request->input('ck-media', false)) {
@@ -71,7 +71,7 @@ class DocumentController extends Controller
                 if ($document->document_file) {
                     $document->document_file->delete();
                 }
-                $document->addMedia(storage_path('tmp/uploads/' . basename($request->input('document_file'))))->toMediaCollection('document_file');
+                $document->addMedia(public_path('uploads/' . basename($request->input('document_file'))))->toMediaCollection('document_file');
             }
         } elseif ($document->document_file) {
             $document->document_file->delete();
