@@ -17,6 +17,14 @@ return [
         'Work_Days'=>'أيام العمل ',
         'Sataurday'=>'السبت ',
         'Friday'=>'الجمعة ',
+        'home'=>'الرئيسية',
+        'WorkFlow'=>'سير العمل ',
+        'PORTFOLIO'=>'الجمعة ',
+        'ABOUT_US'=>'من نحن',
+        'CONTACT_US'=>' تواصل معنا',
+
+
+
 
 
         

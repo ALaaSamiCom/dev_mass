@@ -17,6 +17,13 @@ return [
         'Work_Days'=>'Work Days ',
         'Sataurday'=>'Sataurday ',
         'Friday'=>'Friday ',
+        'home'=>'Home',
+        'WorkFlow'=>'WorkFlow',
+        'PORTFOLIO'=>'PORTFOLIO',
+        'ABOUT_US'=>' ABOUT US',
+        'CONTACT_US'=>' CONTACT US',
+
+
 
 
 

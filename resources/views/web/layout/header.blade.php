@@ -64,15 +64,15 @@
 							<div class="atf-nav">
 								<ul class="atf-nav-list atf-onepage-nav">
 									<li class="menu-item-has-children"><a href="#home"
-										class="atf-smooth-move">home</a></li>
+										class="atf-smooth-move">@lang('web.home')</a></li>
 									{{-- @forelse ($headerpages as $headerpage )
 									<li class="menu-item-has-children"><a href="{{$headerpage->id}}"
 											class="atf-smooth-move">{{$headerpage->title}}</a></li>
 									@empty --}}
-								<li><a href="#step-steps" class="atf-smooth-move">WORKFLOW</a></li>
-								<li><a href="#portfolio">PORTFOLIO</a></li>
-								<li><a href="#abou-company" class="atf-smooth-move">ABOUT US</a></li>
-								<li><a href="#atf-map-area" class="atf-smooth-move" id="contact">CONTACT US</a></li>
+								<li><a href="#step-steps" class="atf-smooth-move">@lang('web.WorkFlow')</a></li>
+								<li><a href="#portfolio">@lang('web.PORTFOLIO')</a></li>
+								<li><a href="#abou-company" class="atf-smooth-move">@lang('web.ABOUT_US')</a></li>
+								<li><a href="#atf-map-area" class="atf-smooth-move" id="contact">@lang('web.CONTACT_US')</a></li>
 								<li>
 								{{-- @endforelse --}}
 		                           
