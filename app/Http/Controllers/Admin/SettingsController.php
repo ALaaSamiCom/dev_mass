@@ -70,7 +70,9 @@ class SettingsController extends Controller
             $setting->logo->delete();
         }
 
-        return redirect()->route('admin.settings.index');
+//        return redirect()->route('admin.settings.index');
+        return redirect()->back()->with('message',trans('global.update_success'));
+
     }
 
     public function show(Setting $setting)
