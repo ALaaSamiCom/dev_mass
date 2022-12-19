@@ -27,7 +27,7 @@
 							</div>
 						</div>
 						<!--- END COL -->
-						
+
 
 						<div class="col-lg-3 col-md-4">
 							<div class="atf-top-social">
@@ -35,15 +35,15 @@
 									@forelse ($links as $link)
 									<a href="{{$link->value}}" class="icon">
 									  <i class="fab fa-{{$link->title}}"></i>
-									</a>                                
+									</a>
 									@empty
 									<a href="#" class="icon"> <i class="fab fa-facebook"></i> </a>
 									<a href="#" class="icon"> <i class="fab fa-instagram"></i></a>
 									<a href="#" class="icon"> <i class="fab fa-twitter"></i> </a>
 								  </li>
 									@endforelse
-								 
-									
+
+
 								</div>
 								<!-- Example split danger button -->
 
@@ -57,7 +57,7 @@
 				<div class="container">
 					<div class="atf-main-header-in">
 						<div class="atf-main-header-left">
-							<a class="atf-site-branding atf-white-logo" href="index.html"><img src="{{$setting->logo->geturl()}}"
+							<a class="atf-site-branding atf-white-logo" href="{{url('/')}}"><img src="{{$setting->logo->geturl()}}"
 									alt="Logo" width="100%"></a>
 						</div>
 						<div class="atf-main-header-right">
@@ -75,13 +75,13 @@
 								<li><a href="#atf-map-area" class="atf-smooth-move" id="contact">@lang('web.CONTACT_US')</a></li>
 								<li>
 								{{-- @endforelse --}}
-		                           
+
 
 
 									   @if(count(config('panel.available_languages', [])) > 1)
 
 										<div class="btn-group">
-											<button type="button" class="btn dropdown-toggle dropdown-toggle-split" 
+											<button type="button" class="btn dropdown-toggle dropdown-toggle-split"
 											data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 											@lang('web.language') </button>
 											{{-- {{ strtoupper(app()->getLocale()) }} --}}
