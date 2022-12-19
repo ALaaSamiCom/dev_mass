@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\WebController;
 
-Route::redirect('/', '/login');
+Route::redirect('/', '/ar');
 Route::get('/home', function () {
     if (session('status')) {
         return redirect()->route('admin.home')->with('status', session('status'));
@@ -12,7 +12,7 @@ Route::get('/home', function () {
 });
 
 Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'], 'middleware' => 'setlocale'], function() {
-  Route::get('', [ WebController::class ,'index'])->name('web.home');
+  Route::get('/', [ WebController::class ,'index'])->name('web.home');
   Route::get('product', [WebController::class,'product']);
 });
 Route::post('save', [WebController::class,'contact']);
