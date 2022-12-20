@@ -20,8 +20,8 @@
 						<div class="col-lg-9 col-md-8">
 							<div class="atf-top-header-in">
 								<ul class="atf-top-header-list">
-									<li><i class="fas fa-phone-volume"></i>@lang('web.Contact') <a href="#">{{$setting->phone}}</a></li>
-									<li><i class="fas fa-envelope"></i>@lang('web.Email') <a href="#">{{$setting->email}}</a></li>
+									<li><i class="fas fa-phone-volume"></i>@lang('web.Contact') <a href="tel:+966530292300">{{$setting->phone}}</a></li>
+									<li><i class="fas fa-envelope"></i>@lang('web.Email') <a href="mailto:info@devun.net">{{$setting->email}}</a></li>
 
 								</ul>
 							</div>
@@ -83,8 +83,8 @@
 										<div class="btn-group">
 											<button type="button" class="btn dropdown-toggle dropdown-toggle-split"
 											data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-											@lang('web.language') </button>
-											{{-- {{ strtoupper(app()->getLocale()) }} --}}
+											{{-- @lang('web.language')  --}}
+											{{ strtoupper(app()->getLocale()) }}</button>
 											{{-- <button type="button"
 												class="btn dropdown-toggle dropdown-toggle-split"
 												data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
