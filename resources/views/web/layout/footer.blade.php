@@ -15,24 +15,24 @@
                         <h6 class="web-title">@lang('web.navigation')</h6>
                         <ul class="list-link float-left">
                             <li>
-                                <a href="#">Home</a>
+                                <a href="#home">@lang('web.home')</a>
                             </li>
-                            <li>
+                            {{-- <li>
                                 <a href="#">Services</a>
-                            </li>
+                            </li> --}}
                             <li>
-                                <a href="#">Workflow</a>
+                                <a href="#step-steps">@lang('web.WorkFlow')</a>
                             </li>
                         </ul>
                         <ul class="list-link float-right">
                             <li>
-                                <a href="#">Portfolio</a>
+                                <a href="#portfolio">@lang('web.PORTFOLIO')</a>
                             </li>
                             <li>
-                                <a href="#">About us</a>
+                                <a href="#abou-company">@lang('web.ABOUT_US')</a>
                             </li>
                             <li>
-                                <a href="#">contact</a>
+                                <a href="#atf-map-area">@lang('web.CONTACT_US')</a>
                             </li>
                         </ul>
                     </div>

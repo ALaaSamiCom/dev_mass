@@ -32,13 +32,12 @@
                     <textarea rows="6" name="message" class="form-control" id="message"
                         placeholder="@lang('web.message')" required="required"></textarea>
                 </div>
-                  {{-- <div class="col-md-12 my-3">
+                  <div class="col-md-12 my-3">
                       <div class="mb-3">
-                        <div class="loading" >@lang('web.send')</div>
                         <div class="errormessage" id="errormessage"></div>
                         <div class="sendmessage" id="sendmessage">@lang('web.success-send')</div>
                       </div>
-                    </div> --}}
+                    </div>
                 <div class="col-md-12">
                     <div class="actions text-left">
                         <button type="submit" value="Submit Now" name="submit" id="submitButton"

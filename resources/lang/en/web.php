@@ -22,15 +22,9 @@ return [
         'PORTFOLIO'=>'PORTFOLIO',
         'ABOUT_US'=>' ABOUT US',
         'CONTACT_US'=>' CONTACT US',
-
-
-
-
-
-
-
-        
-
+        'Continue'=>' Continue',
+        'Back'=>'Back',
+        'success-send'=>'success-send',
 
 
         //contact us

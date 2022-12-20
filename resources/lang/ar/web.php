@@ -19,20 +19,14 @@ return [
         'Friday'=>'الجمعة ',
         'home'=>'الرئيسية',
         'WorkFlow'=>'سير العمل ',
-        'PORTFOLIO'=>'الجمعة ',
+        'PORTFOLIO'=>'الملف التعريفي',
         'ABOUT_US'=>'من نحن',
         'CONTACT_US'=>' تواصل معنا',
-
-
-
-
-
-        
+        'Continue'=>' التالي',
+        'Back'=>'السابق',
+        'success-send'=>'تم الارسال بنجاح',
 
         
-
-       
-
 
      //contact us
     'name' => 'الاسم',

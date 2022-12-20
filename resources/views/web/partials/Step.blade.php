@@ -48,14 +48,14 @@
                         </div>
                         <div class="col-xs-6 col-sm-6 col-md-6  col-lg-7 col-md-offset-3">
                             <h3>{{$item->title}}</h3>
-                            <p>{!! $item->description_en !!}</p>
+                            <p>{!! $item->description !!}</p>
 
                             @if($item->step_item->id !== 1)
-                            <button class="btn btn-primary prevBtn btn-lg pull-left" type="button">Back</button>
+                            <button class="btn btn-primary prevBtn btn-lg pull-left" type="button">@lang('web.Back')</button>
                             @endif
 
                             <button class="btn btn-primary nextBtn btn-lg pull-right" type="button"
-                                id="next">Continue</button>
+                                id="next">@lang('web.Continue')</button>
                             <div class="clearfix"></div>
                         </div>
                     </div>
