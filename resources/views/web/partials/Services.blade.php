@@ -22,7 +22,9 @@
                     data-wow-offset="0"
                     style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn;">
                     <span class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        <img src="{{$service->icon->geturl()}}">
+
+                        {{-- <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                             width="81.2" height="81.2" viewBox="0 0 81.2 81.2">
                             <defs>
                                 <clipPath id="clip-path">
@@ -50,7 +52,7 @@
                                         transform="translate(19.553 40.368)" fill="#fffffe" />
                                 </g>
                             </g>
-                        </svg>
+                        </svg> --}}
 
                     </span>
                     <h3>{{$service->title}}</h3>
