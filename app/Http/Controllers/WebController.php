@@ -22,7 +22,7 @@ class WebController extends Controller
         $sections = SpecialSection::where('place_id',1)->where('status',0)->orderBy('order', 'ASC')->get();
         $sliders = Slider::all();
         $chooses= Choose::orderBy('created_at', 'ASC')->take(3)->get();
-        $services = Service::orderBy('created_at', 'ASC')->get();
+        $services = Service::orderBy('created_at', 'ASC')->take(6)->get();
         $steps =StepByStep::with('stepItemItems')->get();       
         $items=Item::orderBy('order', 'ASC')->get();    
         $our_missions =OurMission::orderBy('order', 'ASC')->take(3)->get();

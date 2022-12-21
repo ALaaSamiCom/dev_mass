@@ -1267,7 +1267,8 @@ step-steps
     height: 345px;
 }*/
 #step-steps .steps .setup-content .iamge img{
-	width: 100%;
+	/*width: 100%;*/
+	width: 85%;
 	height: 100%;
 }
 #step-steps .steps .setup-content h3{
@@ -1375,8 +1376,11 @@ abou-company
     border-bottom:1px solid #ccc;
 	padding-left: 0;
 }
+#abou-company .about-content .about-text h2:first-child{
+	display: none;
+}
 #abou-company .about-content .about-text h2 span{
-	color: var(--thm-color);;
+	color: var(--thm-color);
 }
 #abou-company .about-content .about-text h6{
 	margin-top: 15px;

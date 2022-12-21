@@ -7,7 +7,7 @@
     <div class="content-form">
         <h3>{{$section->title}}</h3>
         <p>{!!$section->description!!}
-            {{-- <a href="#" class="our-link">{{$setting->email}}</a> --}}
+            {{-- <a href="mailto:info@DEVUN.com" class="our-link">{{$setting->email}}</a> --}}
          </p>
         <form id="contactForm" class="atf-contact-form form contactForm" method="POST" action="{{URL('save')}}">
             @csrf

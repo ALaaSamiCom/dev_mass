@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200&display=swap');
+
+body{
+    font-family: 'Tajawal', sans-serif;
+}
 html{
     direction: rtl;
 }
@@ -71,4 +76,28 @@ html{
         left: 0;
         right: -5%;
     }
+}
+
+
+
+
+/******************************Font Wight Editing**************************/
+.atf-nav .atf-nav-list > li{
+    font-weight: 600;
+}
+#home p,
+.atf-themes-btn,
+.atf-section-title p,
+.atf-section-title h2,
+#feature .atf-single-feature h3,
+#feature .atf-single-feature p,
+h1, h2, h3, h4, h5, h6,
+#portfolio .filter a{
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 600;
+}
+
+.atf-section-title h2,
+#feature .atf-single-feature h3{
+    font-weight: 700;
 }
