@@ -50,11 +50,11 @@
                             <h3>{{$item->title}}</h3>
                             <p>{!! $item->description !!}</p>
 
-                            @if($item->step_item->id !== 1)
+                            @if(!$loop->first)
                             <button class="btn btn-primary prevBtn btn-lg pull-left" type="button">@lang('web.Back')</button>
                             @endif
 
-                            @if($item->step_item->id !== 4)
+                            @if(!$loop->last)
                             <button class="btn btn-primary nextBtn btn-lg pull-right" type="button"
                                 id="next">@lang('web.Continue')</button>
                              @endif

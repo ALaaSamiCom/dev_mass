@@ -84,7 +84,9 @@
 											<button type="button" class="btn dropdown-toggle dropdown-toggle-split"
 											data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 											{{-- @lang('web.language')  --}}
-											{{ strtoupper(app()->getLocale()) }}</button>
+											{{-- {{ strtoupper(app()->getLocale()) }} --}}
+											<i class="fa fa-globe" aria-hidden="true"></i>
+										</button>
 											{{-- <button type="button"
 												class="btn dropdown-toggle dropdown-toggle-split"
 												data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -92,7 +94,7 @@
 											</button> --}}
 											<div class="dropdown-menu">
 												@foreach(config('panel.available_languages') as $langLocale => $langName)
-                                               <a class="dropdown-item" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a>
+                                               <a class="dropdown-item" href="{{ url($langLocale) }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a>
                                                  @endforeach
 												{{-- <a class="dropdown-item" href="{{url('ar')}}">Arabic</a>
 												<a class="dropdown-item" href="{{url('en')}}">English</a> --}}

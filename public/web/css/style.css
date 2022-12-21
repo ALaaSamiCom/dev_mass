@@ -518,6 +518,7 @@ button, input, textarea:focus {
   .atf-nav .atf-nav-list li .btn-group .btn{
 	color:#fff !important;
 	font-size: 16px;
+	margin-right: 20%;
   }
 @media screen and (min-width: 992px) {
 	.atf-nav .atf-nav-list {
