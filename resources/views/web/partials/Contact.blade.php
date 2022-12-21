@@ -33,7 +33,7 @@
                         placeholder="@lang('web.message')" required="required"></textarea>
                 </div>
          
-                <div class="col-md-12">
+                <div class="col-md-12"> 
                     <div class="actions text-left">
                         <button type="submit" value="Submit Now" name="submit" id="submitButton"
                             class="atf-themes-btn"

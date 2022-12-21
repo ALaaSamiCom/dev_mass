@@ -1569,3 +1569,13 @@ margin-left: 25px;
 	text-align: center;
 	margin-top: 0 !important;
 }
+
+.errormessage{
+	display:none;
+}
+.sendmessage{
+	display:none;
+}
+.show{
+	display:block;
+}
