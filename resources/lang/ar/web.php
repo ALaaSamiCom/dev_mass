@@ -2,7 +2,7 @@
 
 return [
     
-        'discover_more'  => 'إكتشف أكثر ',
+        'discover_more'  => 'اكتشف أكثر',
         'Email' => 'البريد الالكتروني',
         'Contact'=>'تواصل ',
         'language'=>'اللغة ',

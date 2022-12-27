@@ -71,7 +71,7 @@
                         <div class="atf-main-btn atf-main-btn2 mt-3">
                             <a href="#atf-map-area"
                                 class="page-scroll atf-themes-btn mr-4"><span></span><span></span><span></span><span></span>
-                                @lang('web.get_in_Touch ')<i class="fa fa-angle-right ml-2"></i></a>
+                                @lang('web.get_in_Touch')<i class="fa fa-angle-right ml-2"></i></a>
                         </div>
                     </div>
                 </div>

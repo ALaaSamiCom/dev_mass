@@ -144,20 +144,21 @@ Version      : 1.0
       --------------------------------------------------------------*/			
 			
 			$('.atf-brand-active').owlCarousel({
+                rtl:true,
 				margin:10,
 				autoplay:true,
-				items: 5,
+				items: 3,
 				loop:true,
 				nav:false,
 				responsive:{
 					0:{
-						items:1
+						items:3
 					},
 					600:{
 						items:3
 					},
 					1000:{
-						items:5
+						items:3
 					}
 				}
 			})

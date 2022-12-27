@@ -12,6 +12,7 @@ use App\Models\Service;
 use App\Models\Slider;
 use App\Models\SpecialSection;
 use App\Models\StepByStep;
+use App\Models\Work;
 use Illuminate\Http\Request;
 
 class WebController extends Controller
@@ -28,8 +29,11 @@ class WebController extends Controller
         $our_missions =OurMission::orderBy('order', 'ASC')->take(3)->get();
         $categories=Category::all();
         $products=Product::orderBy('category_id')->take(6)->get();  
+        $latestproducts = Work::orderBy('created_at', 'ASC')->take(6)->get();
+        // $latestproducts = Work::orderBy('created_at', 'ASC')->chunk(3 ,function($latestproducts));
+
         return view('web.index',compact('sections','sliders','chooses' 
-        ,'services','steps','our_missions' ,'categories' ,'products' ,'items'));
+        ,'services','steps','our_missions' ,'categories' ,'products' ,'items','latestproducts'));
     }
     public function product(Request $request)
     {     

@@ -10,7 +10,7 @@ return [
         'navigation'=>'Navigation ',
         'Information'=>'Information ',
         'Closed'=>'Closed ',
-        'get_in_Touch '=>'Get in Touch  ',
+        'get_in_Touch'=>'Get in Touch',
         'Learn_More'=>'Learn More ',
         'DEVUN'=>'DEVUN Co. For Electronic Services',
         'Airport'=>'Airport Road, King Khalid International Airport, Riyadh 11564',
