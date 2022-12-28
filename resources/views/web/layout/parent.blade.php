@@ -40,7 +40,7 @@
 	<!--animate Css-->
 	<link rel="stylesheet" href="{{asset('web/css/animate.css')}}">
 	<!-- Style CSS -->
-	<link rel="stylesheet" href="{{asset('web/css/style.css')}}">
+	<link rel="stylesheet" href="{{asset('web/css/styl.css')}}">
 	<!-- Responsive CSS -->
 	<link rel="stylesheet" href="{{asset('web/css/responsive.css')}}">
 
