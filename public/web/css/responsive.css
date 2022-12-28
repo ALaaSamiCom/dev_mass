@@ -602,4 +602,26 @@
 		font-size: 27px;
 		padding: 6px;
 	}
+
+	
+	#step-steps .steps .setup-content h3{
+		font-size: 20px;
+	}
+	#step-steps .steps .setup-content .iamge img{
+		width: 100%;
+	}
+	#step-steps .steps .setup-content .prevBtn,
+	#step-steps .steps .setup-content .nextBtn{
+		padding: 2px 10px;
+		font-size: 16px;
+        font-weight: 400;
+	}
+	.atf-section-padding {
+		padding: 50px 0;
+	}
+
+	.atf-nav li a:hover{
+		background: #fff;
+		color:var(--thm-black);
+	}
 }

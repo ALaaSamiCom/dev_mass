@@ -108,3 +108,8 @@ h1, h2, h3, h4, h5, h6,
 #atf-map-area .content-form p{
     font-weight: 700;
 }
+
+
+#abou-company .about-content .about-us .single-col p{
+    text-align: justify;
+}

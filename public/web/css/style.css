@@ -1135,6 +1135,7 @@ Why We choose Devun
 #feature .atf-single-feature p{
 	color: #64607D;
 	font-size: 16px;
+	padding-top: 15px;
 }
 #feature .atf-single-feature{
 	position:relative;
@@ -1209,6 +1210,7 @@ Our Services
 #Services .atf-single-feature p{
 	color: #707070;
 	font-size: 16px;
+	padding-top: 15px;
 }
 /*
 -------------------------------------------------------------------------------------------
@@ -1393,6 +1395,7 @@ abou-company
 	color: #707070;
 	text-align: justify;
 	font-size: 18px;
+	padding-top: 15px;
 }
 #abou-company .about-content .about-text .atf-main-btn a{
 	margin-top: 20px;
@@ -1419,7 +1422,7 @@ abou-company
 #abou-company .about-content .about-us .single-col p{
 	color:#fff;
 	font-size: 16px;
-	text-align: left;
+	text-align: justify;
 }
 #abou-company .about-content .about-us #blue1{
 	background: #457B9D;
@@ -1561,6 +1564,7 @@ margin-left: 25px;
 	font-size: 18px;
 	color: #000000;
 	margin-bottom: 0px;
+	padding: 0 10px;
 }
 #portfolio .box p{
 	color: #3C3C3B;
@@ -1589,4 +1593,10 @@ margin-left: 25px;
 button:not(:disabled), [type="button"]:not(:disabled),
 [type="reset"]:not(:disabled), [type="submit"]:not(:disabled){
 	border:none !important;
+}
+
+
+.dropdown-item,
+#step-steps .steps .setup-content button{
+	font-weight: 600;
 }
