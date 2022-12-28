@@ -92,12 +92,19 @@ html{
 #feature .atf-single-feature h3,
 #feature .atf-single-feature p,
 h1, h2, h3, h4, h5, h6,
-#portfolio .filter a{
+#portfolio .filter a,
+#Services .atf-single-feature p,
+#step-steps .steps .setup-content p,
+#GetinTouch .text p,
+#abou-company .about-content .about-text p,
+#abou-company .about-content .about-us .single-col p,
+#atf-map-area .content-form p{
     font-family: 'Tajawal', sans-serif;
     font-weight: 600;
 }
 
 .atf-section-title h2,
-#feature .atf-single-feature h3{
+#feature .atf-single-feature h3,
+#atf-map-area .content-form p{
     font-weight: 700;
 }
