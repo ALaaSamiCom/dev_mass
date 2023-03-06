@@ -19,7 +19,7 @@
                     <p>{!!$section->description!!}</p>
 
                     <div class="atf-main-btn atf-main-btn2 mt-3">
-                        <a href="https://www.templatemonster.com/landing-page-template/al-mujib-multipurpose-busniess-amp-consulting-agency-landing-page-template-145313.html"
+                        <a href="#atf-map-area"
                             class="page-scroll atf-themes-btn mr-4"><span></span><span></span><span></span><span></span>@lang('web.get_in_Touch') <i class="fa fa-angle-right ml-2"></i></a>
                     </div>
 

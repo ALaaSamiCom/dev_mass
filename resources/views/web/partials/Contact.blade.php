@@ -7,7 +7,7 @@
     <div class="content-form">
         <h3>{{$section->title}}</h3>
         <p>{!!$section->description!!}
-            {{-- <a href="#" class="our-link">{{$setting->email}}</a> --}}
+            {{-- <a href="mailto:info@DEVUN.com" class="our-link">{{$setting->email}}</a> --}}
          </p>
         <form id="contactForm" class="atf-contact-form form contactForm" method="POST" action="{{URL('save')}}">
             @csrf
@@ -32,19 +32,25 @@
                     <textarea rows="6" name="message" class="form-control" id="message"
                         placeholder="@lang('web.message')" required="required"></textarea>
                 </div>
-                  <div class="col-md-12 my-3">
-                      <div class="mb-3">
-                        <div class="errormessage" id="errormessage"></div>
-                        <div class="sendmessage" id="sendmessage">@lang('web.success-send')</div>
-                      </div>
-                    </div>
-                <div class="col-md-12">
+         
+                <div class="col-md-12"> 
                     <div class="actions text-left">
                         <button type="submit" value="Submit Now" name="submit" id="submitButton"
                             class="atf-themes-btn"
-                            title="Submit Your Message!"><span></span><span></span><span></span><span></span>@lang('web.send')</button>
+                            title="Submit Your Message!"><span></span><span></span><span></span><span>
+                                </span>@lang('web.send')</button>
                     </div>
                 </div>
+                    
+                <div class="col-md-12 my-3">
+                    <div class="mb-3">
+                      <div class="errormessage" id="errormessage"></div>
+                      {{-- @if ($  == 'OK') --}}
+                      <div class="sendmessage" id="sendmessage">@lang('web.success-send')</div>
+                      {{-- @endif --}}
+
+                    </div>
+                  </div>
             </div>
         </form>
     </div>

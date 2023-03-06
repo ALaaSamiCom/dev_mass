@@ -3811,8 +3811,8 @@ fieldset:disabled .btn {
 .dropdown-toggle-split::after,
 .dropup .dropdown-toggle-split::after,
 .dropright .dropdown-toggle-split::after {
-  margin-left: 10%;
-  margin-right:10%;
+  margin-left: 20%;
+  margin-right:20%;
 }
 
 .dropleft .dropdown-toggle-split::before {

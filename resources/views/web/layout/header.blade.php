@@ -20,8 +20,8 @@
 						<div class="col-lg-9 col-md-8">
 							<div class="atf-top-header-in">
 								<ul class="atf-top-header-list">
-									<li><i class="fas fa-phone-volume"></i>@lang('web.Contact') <a href="#">{{$setting->phone}}</a></li>
-									<li><i class="fas fa-envelope"></i>@lang('web.Email') <a href="#">{{$setting->email}}</a></li>
+									<li><i class="fas fa-phone-volume"></i>@lang('web.Contact') <a href="tel:+966530292300">{{$setting->phone}}</a></li>
+									<li><i class="fas fa-envelope"></i>@lang('web.Email') <a href="mailto:info@devun.net">{{$setting->email}}</a></li>
 
 								</ul>
 							</div>
@@ -63,16 +63,16 @@
 						<div class="atf-main-header-right">
 							<div class="atf-nav">
 								<ul class="atf-nav-list atf-onepage-nav">
-									<li class="menu-item-has-children"><a href="#home"
+									<li class="menu-item-has-children"><a href="{{request()->is("product") ? url(\App::getLocale().'/#home') : "#home"}}"
 										class="atf-smooth-move">@lang('web.home')</a></li>
 									{{-- @forelse ($headerpages as $headerpage )
 									<li class="menu-item-has-children"><a href="{{$headerpage->id}}"
 											class="atf-smooth-move">{{$headerpage->title}}</a></li>
 									@empty --}}
-								<li><a href="#step-steps" class="atf-smooth-move">@lang('web.WorkFlow')</a></li>
-								<li><a href="#portfolio">@lang('web.PORTFOLIO')</a></li>
-								<li><a href="#abou-company" class="atf-smooth-move">@lang('web.ABOUT_US')</a></li>
-								<li><a href="#atf-map-area" class="atf-smooth-move" id="contact">@lang('web.CONTACT_US')</a></li>
+								<li><a href="{{request()->is(\App::getLocale()."/product") ? url(\App::getLocale().'/#step-steps') : "#step-steps"}}" class="atf-smooth-move">@lang('web.WorkFlow')</a></li>
+								<li><a href="{{request()->is(\App::getLocale()."/product") ? "#portfolio" : "#portfolio"}}" class="atf-smooth-move">@lang('web.PORTFOLIO')</a></li>
+								<li><a href="{{request()->is(\App::getLocale()."/product") ? url(\App::getLocale().'/#abou-company') : "#abou-company"}}" class="atf-smooth-move">@lang('web.ABOUT_US')</a></li>
+								<li><a href="{{request()->is(\App::getLocale()."/product") ? url(\App::getLocale().'/#atf-map-area') : "#atf-map-area"}}" class="atf-smooth-move" id="contact">@lang('web.CONTACT_US')</a></li>
 								<li>
 								{{-- @endforelse --}}
 
@@ -83,8 +83,10 @@
 										<div class="btn-group">
 											<button type="button" class="btn dropdown-toggle dropdown-toggle-split"
 											data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-											@lang('web.language') </button>
+											{{-- @lang('web.language')  --}}
 											{{-- {{ strtoupper(app()->getLocale()) }} --}}
+											<i class="fa fa-globe" aria-hidden="true"></i>
+										</button>
 											{{-- <button type="button"
 												class="btn dropdown-toggle dropdown-toggle-split"
 												data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -92,7 +94,7 @@
 											</button> --}}
 											<div class="dropdown-menu">
 												@foreach(config('panel.available_languages') as $langLocale => $langName)
-                                               <a class="dropdown-item" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a>
+                                               <a class="dropdown-item" href="{{ url($langLocale) }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a>
                                                  @endforeach
 												{{-- <a class="dropdown-item" href="{{url('ar')}}">Arabic</a>
 												<a class="dropdown-item" href="{{url('en')}}">English</a> --}}

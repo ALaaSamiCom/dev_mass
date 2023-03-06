@@ -2,7 +2,7 @@
 
 return [
     
-        'discover_more'  => 'إكتشف أكثر ',
+        'discover_more'  => 'اكتشف أكثر',
         'Email' => 'البريد الالكتروني',
         'Contact'=>'تواصل ',
         'language'=>'اللغة ',
@@ -18,8 +18,8 @@ return [
         'Sataurday'=>'السبت ',
         'Friday'=>'الجمعة ',
         'home'=>'الرئيسية',
-        'WorkFlow'=>'سير العمل ',
-        'PORTFOLIO'=>'الملف التعريفي',
+        'WorkFlow'=>'كيف نعمل',
+        'PORTFOLIO'=>'أعمالنا',
         'ABOUT_US'=>'من نحن',
         'CONTACT_US'=>' تواصل معنا',
         'Continue'=>' التالي',

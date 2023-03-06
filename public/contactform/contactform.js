@@ -123,7 +123,7 @@ jQuery(document).ready(function($) {
           $('#'+idd).find("input[name$='transport_type'],input[name$='title'], textarea").val("");
           setTimeout(function(){
             $('#'+idd).find("#sendmessage").hide();
-          },3000);
+          },5000);
         } else {
           $('#'+idd).find("#sendmessage").removeClass("show");
           $('#'+idd).find("#errormessage").addClass("show");

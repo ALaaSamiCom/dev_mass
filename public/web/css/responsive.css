@@ -573,3 +573,55 @@
 		padding-bottom: 30px;
 	}
 }
+
+
+
+/****************************Mobile**************************/
+@media(min-width:300px) and (max-width:767px){
+	#atf-map-area .content-form{
+		position: relative;
+		width: 1005;
+	}
+	.atf-scroll-top.open {
+		right: 0;
+	}
+
+	#feature .atf-single-feature{
+		text-align: center;
+		padding: 70px 10px 70px 10px
+	}
+	#Services .atf-single-feature {
+		padding: 70px 20px 70px 20px;
+		text-align: center;
+	}
+	#portfolio .box h6{
+		text-align: center;
+	}
+
+	#abou-company .about-content .about-text h2 {
+		font-size: 27px;
+		padding: 6px;
+	}
+
+	
+	#step-steps .steps .setup-content h3{
+		font-size: 20px;
+	}
+	#step-steps .steps .setup-content .iamge img{
+		width: 100%;
+	}
+	#step-steps .steps .setup-content .prevBtn,
+	#step-steps .steps .setup-content .nextBtn{
+		padding: 2px 10px;
+		font-size: 16px;
+        font-weight: 400;
+	}
+	.atf-section-padding {
+		padding: 50px 0;
+	}
+
+	.atf-nav li a:hover{
+		background: #fff;
+		color:var(--thm-black);
+	}
+}

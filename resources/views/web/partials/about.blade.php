@@ -25,10 +25,11 @@
                         <h2>{!!$section->shortdescription!!}</h2>
                         {{-- <h6>For Technical Services</h6> --}}
                         <p>{!!$section->description!!}</p>
+                        <br><br><br>
                         <div class="atf-main-btn atf-main-btn2 mt-3">
-                            <a href="https://www.templatemonster.com/landing-page-template/al-mujib-multipurpose-busniess-amp-consulting-agency-landing-page-template-145313.html"
+                            {{-- <a href="https://www.templatemonster.com/landing-page-template/al-mujib-multipurpose-busniess-amp-consulting-agency-landing-page-template-145313.html"
                                 class="page-scroll atf-themes-btn mr-4"><span></span><span></span><span></span><span></span>
-                                @lang('web.Learn_More')<i class="fa fa-angle-right ml-2"></i></a>
+                                @lang('web.Learn_More')<i class="fa fa-angle-right ml-2"></i></a> --}}
                         </div>
                     </div>
                 </div>
@@ -38,7 +39,7 @@
                 <div class="row">
                     @forelse ($our_missions as $our_mission)
                     <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                        <div id="blue1" class="single-col atf-single-feature wow fadeIn" data-wow-duration="1s"
+                        <div id="blue{{$our_mission->id}}" class="single-col atf-single-feature wow fadeIn" data-wow-duration="1s"
                             data-wow-delay="0.2s" data-wow-offset="0"
                             style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn;">
                             <h5>{{$our_mission->order}} </h5>

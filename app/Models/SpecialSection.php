@@ -28,6 +28,7 @@ class SpecialSection extends Model implements HasMedia
         'Services' => 'Our Services',
         'Step' => 'Step By Step?',
         'touch' => 'get in touch',
+        'work' => 'Our latest work',
         'Portfolio' => 'Portfolio',
         'about' => 'About Our Company',
         'Contact' => 'Contact Form',
