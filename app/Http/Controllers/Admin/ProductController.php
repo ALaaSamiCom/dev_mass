@@ -9,6 +9,7 @@ use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Service;
 use Gate;
 use Illuminate\Http\Request;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -22,7 +23,7 @@ class ProductController extends Controller
     {
         abort_if(Gate::denies('product_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $products = Product::with(['category', 'media'])->get();
+        $products = Product::with(['service', 'media'])->get();
 
         return view('admin.products.index', compact('products'));
     }
@@ -31,7 +32,7 @@ class ProductController extends Controller
     {
         abort_if(Gate::denies('product_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $categories = Category::pluck('title_en', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $categories = Service::pluck('title_en', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         return view('admin.products.create', compact('categories'));
     }
@@ -55,9 +56,9 @@ class ProductController extends Controller
     {
         abort_if(Gate::denies('product_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $categories = Category::pluck('title_en', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $categories = Service::pluck('title_en', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $product->load('category');
+        $product->load('service');
 
         return view('admin.products.edit', compact('categories', 'product'));
     }
@@ -84,7 +85,7 @@ class ProductController extends Controller
     {
         abort_if(Gate::denies('product_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $product->load('category');
+        $product->load('service');
 
         return view('admin.products.show', compact('product'));
     }

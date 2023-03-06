@@ -57,11 +57,14 @@ class Product extends Model implements HasMedia
         return $file;
     }
 
-    public function category()
+//    public function category()
+//    {
+//        return $this->belongsTo(Category::class, 'category_id');
+//    }
+    public function service()
     {
-        return $this->belongsTo(Category::class, 'category_id');
+        return $this->belongsTo(Service::class, 'category_id');
     }
-
     protected function serializeDate(DateTimeInterface $date)
     {
         return $date->format('Y-m-d H:i:s');
@@ -75,7 +78,7 @@ class Product extends Model implements HasMedia
 
         }
     }
-  
+
     public function getshortDescriptionAttribute(){
         if(\App::getLocale() == 'en'){
             return $this->short_description_en;

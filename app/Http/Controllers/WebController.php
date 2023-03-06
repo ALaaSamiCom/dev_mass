@@ -24,24 +24,31 @@ class WebController extends Controller
         $sliders = Slider::all();
         $chooses= Choose::orderBy('created_at', 'ASC')->take(3)->get();
         $services = Service::orderBy('created_at', 'ASC')->take(6)->get();
-        $steps =StepByStep::with('stepItemItems')->get();       
-        $items=Item::orderBy('order', 'ASC')->get();    
+        $steps =StepByStep::with('stepItemItems')->get();
+        $items=Item::orderBy('order', 'ASC')->get();
         $our_missions =OurMission::orderBy('order', 'ASC')->take(3)->get();
-        $categories=Category::all();
-        $products=Product::orderBy('category_id')->take(6)->get();  
+        $categories=Service::all();
+        $products=Product::with('service')->orderBy('category_id')->take(6)->get();
         $latestproducts = Work::orderBy('created_at', 'ASC')->take(6)->get();
         // $latestproducts = Work::orderBy('created_at', 'ASC')->chunk(3 ,function($latestproducts));
 
-        return view('web.index',compact('sections','sliders','chooses' 
+        return view('web.index',compact('sections','sliders','chooses'
         ,'services','steps','our_missions' ,'categories' ,'products' ,'items','latestproducts'));
     }
     public function product(Request $request)
-    {     
+    {
         $categories=Category::all();
-        $products=Product::orderBy('category_id')->get();  
+        $products=Product::orderBy('category_id')->get();
         return view('web.product',compact('categories' ,'products'));
     }
-    
+
+    public function service($id)
+    {
+        $service=Service::with('works')->finde($id);
+//        $products=Product::where('category_id',$id)->get();
+        return view('web.service',compact('service' ));
+    }
+
 
     public function contact(Request $request)
     {

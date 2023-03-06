@@ -29,7 +29,7 @@
         </div>
         <div class="boxGroup">
             <div class="row">
-                @forelse ($service->ServiceProducts as $product)
+                @forelse ($service->works as $product)
                     <div class="col-6 col-sm-6 col-md-4">
                         <div class="box {{$product->category->id}}">
                             <div class="image">

@@ -44,6 +44,10 @@ class Service extends Model implements HasMedia
         $this->addMediaConversion('preview')->fit('crop', 120, 120);
     }
 
+    public function works()
+    {
+        return $this->hasMany(Product::class, 'category_id', 'id');
+    }
     public function getIconAttribute()
     {
         $file = $this->getMedia('icon')->last();

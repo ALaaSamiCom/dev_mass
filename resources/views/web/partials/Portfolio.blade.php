@@ -18,8 +18,8 @@
         <!------------------------------------Tabs----------------------------------------->
         <div class="filter">
             <a class="all current" href="#">@lang('web.show_All')</a>
-            @forelse ($categories as $category)           
-                <a class="{{$category->id}}" href="#">{{$category->title}}</a>                
+            @forelse ($categories as $category)
+                <a class="{{$category->id}}" href="#">{{$category->title}}</a>
             @empty
                 <a class="one" href="#">web</a>
                 <a class="two" href="#">Mobile Apps</a>
@@ -31,14 +31,14 @@
             <div class="row">
                 @forelse ($products as $product)
                     <div class="col-6 col-sm-6 col-md-4">
-                        <div class="box {{$product->category->id}}">
+                        <div class="box {{$product->service->id}}">
                             <div class="image">
                                 <img src="{{$product->image->geturl()}}" />
                             </div>
                             <h6>{{$product->title}}</h6>
                             <p>{{$product->short_description}}</p>
                         </div>
-                    </div>    
+                    </div>
                 @empty
                     <div class="col-6 col-sm-6 col-md-4">
                         <div class="box one">
