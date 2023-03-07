@@ -52,12 +52,12 @@
 
 
 @yield('style')
-    {{$setting->head_tags}}
+    {!! $setting->head_tags !!}
 
 </head>
 
 <body>
-{{$setting->body_tags}}
+{!! $setting->body_tags !!}
 <!-- Page Wrapper -->
 	<div class="page-wrapper">
 
