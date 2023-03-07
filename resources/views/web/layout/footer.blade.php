@@ -79,7 +79,7 @@
         </div>
 
         <div class="bottom-footer">
-            <p>Copyright© 2022 DEVUN. All Rights Reserved</p>
+            <p>Copyright© 2023 DEVUN. All Rights Reserved</p>
         </div>
     </div>
 </section>

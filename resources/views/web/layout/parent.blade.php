@@ -70,6 +70,9 @@
 
 
 
+        <a  class="whats-app" href="{{$setting->phone}}" target="_blank">
+            <i class="fa fa-whatsapp my-float"></i>
+        </a>
 		<!---------------------------------------------------------------------------------------------------------------------------->
 		<!-- Latest jQuery -->
 		<script src="{{asset('web/js/jquery-1.12.4.min.js')}}"></script>
