@@ -55,18 +55,7 @@
                             {!! $slider->description_ar !!}
                         </td>
                     </tr>
-                    <tr>
-                        <th>
-                            {{ trans('cruds.slider.fields.image') }}
-                        </th>
-                        <td>
-                            @if($slider->image)
-                                <a href="{{ $slider->image->getUrl() }}" target="_blank" style="display: inline-block">
-                                    <img src="{{ $slider->image->getUrl('thumb') }}">
-                                </a>
-                            @endif
-                        </td>
-                    </tr>
+
                     <tr>
                         <th>
                             {{ trans('cruds.slider.fields.short_description_en') }}
@@ -89,6 +78,27 @@
                         </th>
                         <td>
                             {{ $slider->link }}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            {{ trans('cruds.specialSection.fields.place') }}
+                        </th>
+                        <td>
+                            {{ $slider->place->title ?? '' }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.slider.fields.image') }}
+                        </th>
+                        <td>
+                            @if($slider->image)
+                                <a href="{{ $slider->image->getUrl() }}" target="_blank" style="display: inline-block">
+                                    <img src="{{ $slider->image->getUrl('thumb') }}">
+                                </a>
+                            @endif
                         </td>
                     </tr>
                 </tbody>

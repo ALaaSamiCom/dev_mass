@@ -7,6 +7,7 @@ use App\Http\Controllers\Traits\MediaUploadingTrait;
 use App\Http\Requests\MassDestroySliderRequest;
 use App\Http\Requests\StoreSliderRequest;
 use App\Http\Requests\UpdateSliderRequest;
+use App\Models\Layaoutplace;
 use App\Models\Slider;
 use Gate;
 use Illuminate\Http\Request;
@@ -21,7 +22,7 @@ class SliderController extends Controller
     {
         abort_if(Gate::denies('slider_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $sliders = Slider::with(['media'])->get();
+        $sliders = Slider::with(['place','media'])->get();
 
         return view('admin.sliders.index', compact('sliders'));
     }
@@ -29,8 +30,9 @@ class SliderController extends Controller
     public function create()
     {
         abort_if(Gate::denies('slider_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        $places = Layaoutplace::pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        return view('admin.sliders.create');
+        return view('admin.sliders.create',compact('places'));
     }
 
     public function store(StoreSliderRequest $request)
@@ -51,8 +53,10 @@ class SliderController extends Controller
     public function edit(Slider $slider)
     {
         abort_if(Gate::denies('slider_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        $places = Layaoutplace::pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        return view('admin.sliders.edit', compact('slider'));
+        $slider->load('place');
+        return view('admin.sliders.edit', compact('places', 'slider'));
     }
 
     public function update(UpdateSliderRequest $request, Slider $slider)
@@ -76,7 +80,7 @@ class SliderController extends Controller
     public function show(Slider $slider)
     {
         abort_if(Gate::denies('slider_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-
+        $slider->load('place');
         return view('admin.sliders.show', compact('slider'));
     }
 

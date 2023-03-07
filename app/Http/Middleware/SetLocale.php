@@ -8,6 +8,13 @@ class SetLocale
 {
     public function handle($request, Closure $next)
     {
+        if($request->segment(1) != 'admin'){
+            $language =  $request->segment(1);
+            app()->setLocale($language);
+            session()->put('language', 'ar');
+            return $next($request);
+
+        }
         if (request('change_language')) {
             session()->put('language', request('change_language'));
             $language = request('change_language');

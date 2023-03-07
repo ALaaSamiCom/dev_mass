@@ -55,7 +55,7 @@
                         </svg> --}}
 
                     </span>
-                    <h3>{{$service->title}}</h3>
+               <h3>     <a href="{{ url(\App::getLocale().'/service/'.$service->id.'/'.$service->title) }}">{{$service->title}}</a></h3>
                     <p> {!!$service->description!!}
 
                     </p>
@@ -63,9 +63,9 @@
             </div>
             <!--- END COL -->
 
-                
+
             @empty
-        
+
             <div class="col-lg-4 col-md-6 atf-blog-feature">
                 <div class="atf-single-feature wow fadeIn" data-wow-duration="2s" data-wow-delay="0.4s"
                     data-wow-offset="0"
@@ -87,7 +87,7 @@
                               </g>
                             </g>
                           </svg>
-                          
+
 
                     </span>
                     <h3>Apps Design & Development</h3>
@@ -126,7 +126,7 @@
                 </div>
             </div>
             <!--- END COL -->
-                
+
             @endforelse
         </div>
         <!--- END ROW -->

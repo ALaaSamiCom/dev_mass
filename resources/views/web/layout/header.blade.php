@@ -63,16 +63,16 @@
 						<div class="atf-main-header-right">
 							<div class="atf-nav">
 								<ul class="atf-nav-list atf-onepage-nav">
-									<li class="menu-item-has-children"><a href="{{request()->is("product") ? url(\App::getLocale().'/#home') : "#home"}}"
+									<li class="menu-item-has-children"><a href="{{url(\App::getLocale().'/#home')}}"
 										class="atf-smooth-move">@lang('web.home')</a></li>
 									{{-- @forelse ($headerpages as $headerpage )
 									<li class="menu-item-has-children"><a href="{{$headerpage->id}}"
 											class="atf-smooth-move">{{$headerpage->title}}</a></li>
 									@empty --}}
-								<li><a href="{{request()->is(\App::getLocale()."/product") ? url(\App::getLocale().'/#step-steps') : "#step-steps"}}" class="atf-smooth-move">@lang('web.WorkFlow')</a></li>
-								<li><a href="{{request()->is(\App::getLocale()."/product") ? "#portfolio" : "#portfolio"}}" class="atf-smooth-move">@lang('web.PORTFOLIO')</a></li>
-								<li><a href="{{request()->is(\App::getLocale()."/product") ? url(\App::getLocale().'/#abou-company') : "#abou-company"}}" class="atf-smooth-move">@lang('web.ABOUT_US')</a></li>
-								<li><a href="{{request()->is(\App::getLocale()."/product") ? url(\App::getLocale().'/#atf-map-area') : "#atf-map-area"}}" class="atf-smooth-move" id="contact">@lang('web.CONTACT_US')</a></li>
+								<li><a href="{{url(\App::getLocale().'/#step-steps')}}" class="atf-smooth-move">@lang('web.WorkFlow')</a></li>
+								<li><a href="{{url(\App::getLocale().'/#portfolio')}}" class="atf-smooth-move">@lang('web.PORTFOLIO')</a></li>
+								<li><a href="{{url(\App::getLocale().'/#abou-company')}}" class="atf-smooth-move">@lang('web.ABOUT_US')</a></li>
+								<li><a href="{{url(\App::getLocale().'/#atf-map-area')}}" class="atf-smooth-move" id="contact">@lang('web.CONTACT_US')</a></li>
 								<li>
 								{{-- @endforelse --}}
 
@@ -94,7 +94,7 @@
 											</button> --}}
 											<div class="dropdown-menu">
 												@foreach(config('panel.available_languages') as $langLocale => $langName)
-                                               <a class="dropdown-item" href="{{ url($langLocale) }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a>
+                                               <a class="dropdown-item" href="{{ url($langLocale) }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a>
                                                  @endforeach
 												{{-- <a class="dropdown-item" href="{{url('ar')}}">Arabic</a>
 												<a class="dropdown-item" href="{{url('en')}}">English</a> --}}

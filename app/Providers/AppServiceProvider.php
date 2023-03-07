@@ -7,6 +7,7 @@ use App\Models\SocialLink;
 use Illuminate\Support\Facades\URL;
 use App\Models\SpecialSection;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Http\Request;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,13 +26,16 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(Request $request)
     {
         //
 
         if (env('APP_ENV') === 'production') {
             Url::forceScheme('https');
         }
+        if ($request->header('lang'))
+            \App::setLocale($request->header('lang'));
+
         $links = SocialLink::all();
         $setting = Setting::first();
 //        $headerpages = SpecialSection::all();

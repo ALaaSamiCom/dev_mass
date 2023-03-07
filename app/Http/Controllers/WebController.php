@@ -21,7 +21,7 @@ class WebController extends Controller
     public function index(Request $request)
     {
         $sections = SpecialSection::where('place_id',1)->where('status',0)->orderBy('order', 'ASC')->get();
-        $sliders = Slider::all();
+        $sliders = Slider::where('place_id',1)->get();
         $chooses= Choose::orderBy('created_at', 'ASC')->take(3)->get();
         $services = Service::orderBy('created_at', 'ASC')->take(6)->get();
         $steps =StepByStep::with('stepItemItems')->get();
@@ -37,16 +37,19 @@ class WebController extends Controller
     }
     public function product(Request $request)
     {
+        $sliders = Slider::all();
         $categories=Category::all();
         $products=Product::orderBy('category_id')->get();
-        return view('web.product',compact('categories' ,'products'));
+        return view('web.product',compact('categories' ,'products','sliders'));
     }
 
-    public function service($id)
+    public function service($lang,$id)
     {
-        $service=Service::with('works')->finde($id);
+        $sections = SpecialSection::where('place_id',2)->where('status',0)->orderBy('order', 'ASC')->get();
+        $sliders = Slider::where('place_id',2)->get();
+        $service=Service::with('works')->findOrFail($id);
 //        $products=Product::where('category_id',$id)->get();
-        return view('web.service',compact('service' ));
+        return view('web.service',compact('service','sliders','sections'));
     }
 
 

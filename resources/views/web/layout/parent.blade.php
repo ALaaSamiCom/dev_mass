@@ -113,7 +113,11 @@
 					$offers.fadeIn(700);
 
 				});
-
+                @if(isset($categories))
+                {{$categories = $categories}}
+                @else
+                {{$categories = $service->works}}
+                @endif
 				@forelse ($categories as $category)
 					$filter.on('click touch', '.{{$category->id}}', function (e) {
 						e.preventDefault();

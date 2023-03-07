@@ -50,17 +50,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.slider.fields.description_ar_helper') }}</span>
             </div>
-            <div class="form-group">
-                <label for="image">{{ trans('cruds.slider.fields.image') }}</label>
-                <div class="needsclick dropzone {{ $errors->has('image') ? 'is-invalid' : '' }}" id="image-dropzone">
-                </div>
-                @if($errors->has('image'))
-                    <div class="invalid-feedback">
-                        {{ $errors->first('image') }}
-                    </div>
-                @endif
-                <span class="help-block">{{ trans('cruds.slider.fields.image_helper') }}</span>
-            </div>
+
             <div class="form-group">
                 <label for="short_description_en">{{ trans('cruds.slider.fields.short_description_en') }}</label>
                 <textarea class="form-control ckeditor {{ $errors->has('short_description_en') ? 'is-invalid' : '' }}" name="short_description_en" id="short_description_en">{!! old('short_description_en', $slider->short_description_en) !!}</textarea>
@@ -90,6 +80,31 @@
                     </div>
                 @endif
                 <span class="help-block">{{ trans('cruds.slider.fields.link_helper') }}</span>
+            </div>
+            <div class="form-group">
+                <label for="image">{{ trans('cruds.slider.fields.image') }}</label>
+                <div class="needsclick dropzone {{ $errors->has('image') ? 'is-invalid' : '' }}" id="image-dropzone">
+                </div>
+                @if($errors->has('image'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('image') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('cruds.slider.fields.image_helper') }}</span>
+            </div>
+            <div class="form-group">
+                <label for="place_id">{{ trans('cruds.specialSection.fields.place') }}</label>
+                <select class="form-control select2 {{ $errors->has('place') ? 'is-invalid' : '' }}" name="place_id" id="place_id">
+                    @foreach($places as $id => $entry)
+                        <option value="{{ $id }}" {{ (old('place_id') ? old('place_id') : $specialSection->place->id ?? '') == $id ? 'selected' : '' }}>{{ $entry }}</option>
+                    @endforeach
+                </select>
+                @if($errors->has('place'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('place') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('cruds.specialSection.fields.place_helper') }}</span>
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">

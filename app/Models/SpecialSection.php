@@ -32,6 +32,8 @@ class SpecialSection extends Model implements HasMedia
         'Portfolio' => 'Portfolio',
         'about' => 'About Our Company',
         'Contact' => 'Contact Form',
+        'service Page Portfolio' => 'works',
+
     ];
 
     public $table = 'special_sections';

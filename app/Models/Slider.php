@@ -36,6 +36,7 @@ class Slider extends Model implements HasMedia
         'short_description_en',
         'short_description_ar',
         'link',
+        'place_id',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -62,6 +63,10 @@ class Slider extends Model implements HasMedia
     protected function serializeDate(DateTimeInterface $date)
     {
         return $date->format('Y-m-d H:i:s');
+    }
+    public function place()
+    {
+        return $this->belongsTo(Layaoutplace::class, 'place_id');
     }
     public function getTitleAttribute(){
         if(\App::getLocale() == 'en'){

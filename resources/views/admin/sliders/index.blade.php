@@ -32,6 +32,9 @@
                             {{ trans('cruds.slider.fields.title_ar') }}
                         </th>
                         <th>
+                            {{ trans('cruds.specialSection.fields.place') }}
+                        </th>
+                        <th>
                             {{ trans('cruds.slider.fields.image') }}
                         </th>
                         <th>
@@ -56,6 +59,9 @@
                             </td>
                             <td>
                                 {{ $slider->title_ar ?? '' }}
+                            </td>
+                            <td>
+                                {{ $slider->place->title ?? '' }}
                             </td>
                             <td>
                                 @if($slider->image)
@@ -146,7 +152,7 @@
       $($.fn.dataTable.tables(true)).DataTable()
           .columns.adjust();
   });
-  
+
 })
 
 </script>
