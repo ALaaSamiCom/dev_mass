@@ -38,6 +38,8 @@ class Setting extends Model implements HasMedia
         'email',
         'phone',
         'website',
+        'head_tags',
+        'body_tags',
         'latitudes',
         'meridians',
         'created_at',
@@ -83,13 +85,13 @@ class Setting extends Model implements HasMedia
         }
     }
 
-   
+
     public function getKeywordsAttribute(){
         if(\App::getLocale() == 'en'){
             return $this->keywords_en;
         }else{
             return $this->keywords_ar;
         }
-        
+
     }
 }

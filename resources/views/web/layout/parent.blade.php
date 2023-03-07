@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="@lang('global.dir')">
 
 
 <head>
@@ -52,13 +52,13 @@
 
 
 @yield('style')
-
+    {{$setting->head_tags}}
 
 </head>
 
 <body>
-
-	<!-- Page Wrapper -->
+{{$setting->body_tags}}
+<!-- Page Wrapper -->
 	<div class="page-wrapper">
 
 

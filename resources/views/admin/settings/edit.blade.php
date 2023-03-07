@@ -82,6 +82,36 @@
                 <span class="help-block">{{ trans('cruds.setting.fields.keywords_ar_helper') }}</span>
             </div>
             <div class="form-group">
+                <label for="keywords_en">{{ trans('cruds.setting.fields.keywords_en') }}</label>
+                <textarea class="form-control {{ $errors->has('keywords_en') ? 'is-invalid' : '' }}" name="keywords_en" id="keywords_en">{{ old('keywords_en', $setting->keywords_en) }}</textarea>
+                @if($errors->has('keywords_en'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('keywords_en') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('cruds.setting.fields.keywords_en_helper') }}</span>
+            </div>
+            <div class="form-group">
+                <label for="head_tags">{{ trans('cruds.setting.fields.head_tags') }}</label>
+                <textarea class="form-control {{ $errors->has('keywords_en') ? 'is-invalid' : '' }}" name="head_tags" id="head_tags">{{ old('head_tags', $setting->head_tags) }}</textarea>
+                @if($errors->has('head_tags'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('head_tags') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('cruds.setting.fields.keywords_en_helper') }}</span>
+            </div>
+            <div class="form-group">
+                <label for="body_tags">{{ trans('cruds.setting.fields.body_tags') }}</label>
+                <textarea class="form-control {{ $errors->has('keywords_en') ? 'is-invalid' : '' }}" name="body_tags" id="body_tags">{{ old('body_tags', $setting->body_tags) }}</textarea>
+                @if($errors->has('body_tags'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('body_tags') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('cruds.setting.fields.keywords_en_helper') }}</span>
+            </div>
+            <div class="form-group">
                 <label for="email">{{ trans('cruds.setting.fields.email') }}</label>
                 <input class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" type="email" name="email" id="email" value="{{ old('email', $setting->email) }}">
                 @if($errors->has('email'))
