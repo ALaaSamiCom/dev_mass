@@ -1,0 +1,458 @@
+@media only screen and (max-width : 2500px) {
+	.page-wrapper{
+		overflow:hidden;
+	}
+	
+}
+@media only screen and (max-width : 992px) {
+
+	.atf-single-text h1{
+		font-size:40px;
+	}
+	.atf-call-image img {
+		margin-top: 0px;
+	}
+
+}
+@media only screen and (max-width : 991px) {
+	.atf-single-text h1{
+		font-size:35px;
+	}
+	.atf-single-feature{
+		margin:15px 0;
+	}
+	.atf-pricing-item{
+		margin:15px 0;
+	}
+	.atf-about-inner{
+		padding-top:40px;
+	}
+	.atf-counter {
+		margin: 15px 0;
+	}
+	.atf-service-991{
+		padding-top:40px;	
+	}
+	.atf-call-image{
+		padding-top:40px;	
+	}
+	.atf-blog-area .atf-single-blog img{
+		width:100%;
+	}
+	.atf-work-area{
+		margin-top:30px;
+		padding-left:0;
+	}
+	.atf-blog-area .atf-single-blog{
+		margin: 15px 0px;
+	}
+	.atf-footer-link{
+		margin: 15px 0px;
+	}
+	.atf-mailchamp-headding h2{
+		font-size:25px;
+	}
+	.contact{
+		margin-top:40px;
+	}
+	/**************************************************/
+	.atf-site-header.atf-style1 .atf-main-header-in{
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		height: 80px;
+	}
+	.atf-main-header {
+		position: relative;
+		/* padding-bottom: 4px; */
+		padding: 9px 0 1px;
+	}
+	.atf-site-header.atf-style1 .atf-main-header-in{
+		height: 60px;
+		margin-bottom: 10px;
+	}
+	.atf-menu-toggle span:before,
+	.atf-menu-toggle span:after,
+	.atf-menu-toggle span{
+		background-color: #24659D;
+		
+	}
+	.atf-site-header.atf-style1.atf-sticky-active .atf-menu-toggle span:before,
+	.atf-site-header.atf-style1.atf-sticky-active .atf-menu-toggle span:after,
+	.atf-site-header.atf-style1.atf-sticky-active .atf-menu-toggle span
+	{
+		background-color: #fff;
+	}
+	.carousel-caption.d-none{
+		display: block !important;
+	}
+	#home .carousel-caption {
+		bottom: 0;
+		top:20%;
+	}
+	#home .carousel-caption h5 {
+		font-size: 0.65rem !important;
+    line-height: 1;
+	}
+	#home .carousel-caption p{
+		font-size: 0.6rem;
+		line-height: 1.3;
+	}
+	#home .atf-themes-btn{
+		display: none;
+	}
+	.atf-toggle-active span{
+		background-color: transparent;
+	}
+	/*********/
+	.atf-site-header.atf-style1 .atf-main-header-in .atf-main-header-right .atf-nav .btn-group.languge{
+		margin-left: 8px;
+	}
+	.atf-nav .atf-nav-list > li > a{
+		color: #fff;
+		font-size: 12px;
+		font-weight: 400;
+	}
+	.atf-site-header.atf-style1 .atf-main-header-in .atf-main-header-right .atf-nav .btn-group.languge .btn{
+		font-size: 12px;
+		color: #fff;
+	}
+	.atf-home2-area{
+		height: 250px;
+		margin-top: 95px;
+	}
+	#home .carousel-indicators {
+		bottom: 5px;
+	}
+	#home .carousel-indicators li {
+		width: 13px;
+		height: 2px;
+	}
+	.atf-section-padding{
+		padding: 30px 0;
+	}
+	#partner .atf-section-padding{
+		padding-bottom: 0;
+	}
+	#about-us .about-image{
+		height: 330px;
+		margin-bottom: 20px;
+	}
+	.section-title{
+		font-size: 1.4rem;
+	}
+	.section-title::after{
+		width: 94.65px;
+	}
+	.section-description{
+		font-size: 0.9rem;
+	}
+	.section-header .section-title::after {
+		position: absolute;
+		width: 80px;
+		left: 39.5%;
+	}
+	.section-header p.section-description{
+		font-size: 0.95rem;
+		margin-top: 30px;
+	}
+	#our-services .single-col{
+		height: 399px;
+		padding: 30px;
+	}
+	#our-services .single-col .image{
+		margin-bottom: 10px;
+	}
+	#testimonial .owl-theme .owl-nav{
+		width: 20%;
+	}
+	#footer .top-footer,
+	#footer .contact-data{
+		width: 100%;
+	}
+	#footer .top-footer p{
+		font-size: 1rem;
+	}
+	#footer .top-footer span{
+		padding: 0;
+		padding-bottom: 10px;
+		font-size: 0.7rem;
+	}
+	#footer .contact-data .toast-header .icon{
+		width: 30px;
+		height: 30px;
+		margin-right: 7px;
+		line-height: 30px;
+		display: none;
+	}
+	#footer .toast-header{
+		padding: 0.5rem 0.45rem;
+	}
+	/*#footer .contact-data .toast-header .icon svg{
+		width: 10px !important;
+		height: 10px !important;
+	}*/
+	#footer .contact-data .toast-header p span{
+		font-size: 0.65rem;
+	}
+	#footer .contact-data .toast-header p{
+		font-size: 0.55rem;
+	}
+	#footer .footer-links .single-col h4.col-title{
+		font-size: 0.9rem;
+	}
+	#footer .footer-links .single-col .about-description, #footer .footer-links .single-col span{
+		font-size: 0.74rem;
+	}
+	#footer .footer-links .single-col.links{
+		padding: 0;
+	}
+	#footer .footer-bottom p{
+		font-size: 0.52rem;
+	}
+	.sub-page .section-header{
+		padding: 0px 0 30px;
+	}
+	.portfolio-page.sub-page .section-header .section-title::after {
+		left: 37%;
+	}
+	.portfolio-page.sub-page .section-title .circle {
+		left: 46.5%;
+	}
+	.section-title .circle{
+		left: 5.5%;
+	}
+	#abou-company .about-content .about-image{
+		width: 350px;
+		height: 350px;
+		margin: 0 auto;
+		margin-bottom: 10px;
+	}
+	#contact.atf-feature-area .contact-form{
+		width: 80%;
+		right: 9%;
+		padding: 25px;
+		top: -17%;
+	}
+	#contact.atf-feature-area{
+		height: 750px;
+	}
+	.filter a{
+		margin: 10px 0px 0;
+		font-size: 0.8rem;
+	}
+	#about-service .section-description{
+		margin-right: 0;
+	}
+	#about-service .atf-themes-btn.more-about{
+		margin: 0;
+		margin: 15px 0;
+	}
+	#about-service .service-image{
+		display: none;
+	}
+	#step-steps .step-container .btn-circle{
+		font-size: 0.7rem;
+		padding: 5px;
+	}
+	#step-steps .step-container .stepwizard{
+		width: 100%;
+		margin: 13px auto 28px;
+	}
+	.pricingtablecontainer .pricingtable{
+		margin-bottom: 30px;
+	}
+	.pricingtablecontainer .pricingtable.Premium-hosting{
+		margin-top: 15px;
+	}
+}
+/*************************************************************/
+@media only screen and (max-width: 767px) {
+	.atf-feature-text{
+		margin-top:15px;
+	}
+	.atf-section-title p {
+		width: 100%;
+	}
+	.atf-grid-portfolio{
+		width:50%;
+	}
+	.atf-blog-area .atf-single-blog img{
+		width:100%;
+	}
+	.form-message{
+		padding-bottom:30px;
+	}
+	#atf-map-area {
+		margin-bottom: 0px;
+	}
+
+/*****************************************************/
+
+}
+
+@media only screen and (max-width: 576px) {
+	.atf-mailchamp-headding h2 {
+		font-size: 20px;
+		text-align: center;
+	}
+	.atf-contact-info{
+		margin-right:0;
+	}
+	.atf-grid-portfolio{
+		width:100%;
+	}
+	.atf-post-details.atf-style1 .embed-responsive{
+		display:none;
+	}
+	.atf-main-header .atf-main-header-left{
+		width: 100px;
+	}
+	.atf-site-header.atf-style1 .atf-main-header-in .atf-main-header-left{
+		margin-right: 30px;
+	}
+
+	
+}
+
+@media screen and (max-width: 320px) and (min-width: 0px){
+	.atf-contact-details{
+		margin:15px 0;
+	}
+	.atf-main-header .atf-main-header-left{
+		width: 160px;
+	}
+
+}
+
+
+/***********************************mobile*******************************/
+@media (min-width: 300px) and (max-width: 766.5px){}
+
+
+
+/**********************************************ibad********************************/
+@media(min-width:768px) and (max-width:1024px){
+	.atf-main-header .atf-main-header-left{
+		width: 130px;
+	}
+	.section-title{
+		font-size: 1.2rem;
+		margin-bottom: 17px;
+	}
+	.section-description {
+		font-size: 0.7rem;
+		line-height: 1.6;
+	}
+	#about-us .atf-themes-btn.more-about{
+		margin-top: 0;
+	}
+	.section-header .section-title::after {
+		position: absolute;
+		width: 80px;
+		left: 43.5%;
+	}
+	#testimonial .owl-theme .owl-nav {
+		width: 12%;
+	}
+	#footer .top-footer{
+		width: 80%;
+	}
+	#footer .contact-data{
+		width: 90%;
+	}
+	#footer .contact-data .toast-header .icon{
+		display: inline-block;
+	}
+	#footer .contact-data .toast-header .icon svg{
+		width: 12px !important;
+		height: 12px !important;
+	}
+	#footer .footer-links .single-col.links,
+	#footer .footer-links .single-col.links.company-links.comany-information{
+		padding: 0 0px 0 50px;
+	}
+	#abou-company .about-content .about-image{
+		width: 255px;
+    height: 255px;
+    margin: 150px auto;
+	display: none;
+	}
+	#our-principles .our-principles-content .single-col{
+		height: 320px;
+		padding: 20px;
+	}
+	.portfolio-page.sub-page .section-header .section-title::after {
+		left: 44%;
+	}
+	.portfolio-page.sub-page .section-title .circle {
+		left: 48.5%;
+	}
+	#contact.atf-feature-area {
+		height: 550px;
+	}
+	#contact.atf-feature-area .contact-form{
+		top: -23%;
+	}
+	#Portfolio .Portfoli-example{
+		height: 215px;
+		margin-bottom: 0;
+		margin-top: 25px;
+	}
+	#about-service .service-image{
+		display: block;
+	}
+	#about-service .service-image {
+		width: 289px;
+		height: 220px;
+	}
+	#Portfolio .Portfoli-example{
+		height: 260px;
+	}
+	.pricingtablecontainer .pricingtable.Premium-hosting{
+		margin-top: 0px;
+	}
+	.atf-home2-area{
+	height: 422px;
+	}
+	#home .atf-themes-btn{
+		display: inline-block;
+	}
+	#home .home-buttuns .atf-themes-btn{
+		margin: 0;
+	}
+	#home .home-buttuns .atf-themes-btn{
+		font-size: 12px;
+		width: 160px;
+	}
+	#home .carousel-caption{
+		left: 6%;
+	}
+	/*#home .home-buttuns .atf-themes-btn.mr-4 {
+		margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+    #home .home-buttuns .atf-themes-btn.mr-4.freeConsulting {
+       
+		margin-right: 0 !important;
+        margin-left: 1.5rem !important;
+    }*/
+}
+/*--------------------------------ibadpro--------------------------------------------*/
+@media(min-width:1024px) and (max-width:1300px){}
+/************************LARG SECREEN***************************************************/
+@media(min-width: 1400px) {
+	.atf-home2-area{
+		height: 760px;
+	}
+}
+@media(min-width: 1600px) {
+	.atf-home2-area{
+		height: 878px;
+	}
+}
+
+
+
+

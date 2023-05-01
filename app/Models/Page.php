@@ -17,9 +17,9 @@ class Page extends Model implements HasMedia
     use HasFactory;
 
     public const LAYOUT_RADIO = [
-        // '0' => 'realestate&tourism',
-        // '1' => 'studentServices',
-        // '2' => 'contactus',
+         '0' => 'صفحة عادية',
+         '1' => 'صفحة شركة',
+//         '2' => 'contactus',
     ];
 
     public $table = 'pages';
@@ -56,7 +56,7 @@ class Page extends Model implements HasMedia
         $this->addMediaConversion('preview')->fit('crop', 120, 120);
     }
 
-    public function stepItemItems()
+    public function Items()
     {
         return $this->hasMany(Item::class, 'step_item_id', 'id');
     }
@@ -77,7 +77,7 @@ class Page extends Model implements HasMedia
     {
         return $date->format('Y-m-d H:i:s');
     }
-    
+
     public function getTitleAttribute(){
         if(\App::getLocale() == 'en'){
             return $this->title_en;
@@ -108,6 +108,6 @@ class Page extends Model implements HasMedia
         }else{
             return $this->keywords_ar;
         }
-        
+
     }
 }

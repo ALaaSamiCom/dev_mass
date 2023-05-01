@@ -16,8 +16,12 @@ Route::get('/home', function () {
 
 Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'], 'middleware' => 'setlocale'], function() {
   Route::get('/', [ WebController::class ,'index'])->name('web.home');
-  Route::get('product', [WebController::class,'product']);
+    Route::get('/newweb', [ WebController::class ,'newweb'])->name('web.newweb');
+
+    Route::get('product', [WebController::class,'product']);
     Route::get('service/{id}/{title}', [WebController::class,'service']);
+    Route::get('page/{title}', [WebController::class,'page']);
+
     Route::get('/sitemap.xml', 'SitemapXmlController@index');
 
 });

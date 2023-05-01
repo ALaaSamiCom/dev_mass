@@ -20,6 +20,7 @@ class Setting extends Model implements HasMedia
 
     protected $appends = [
         'logo',
+        'white_logo',
     ];
 
     protected $dates = [
@@ -38,6 +39,8 @@ class Setting extends Model implements HasMedia
         'email',
         'phone',
         'website',
+        'address_en',
+        'address_ar',
         'head_tags',
         'body_tags',
         'latitudes',
@@ -54,6 +57,17 @@ class Setting extends Model implements HasMedia
     }
 
     public function getLogoAttribute()
+    {
+        $file = $this->getMedia('logo')->last();
+        if ($file) {
+            $file->url       = $file->getUrl();
+            $file->thumbnail = $file->getUrl('thumb');
+            $file->preview   = $file->getUrl('preview');
+        }
+
+        return $file;
+    }
+    public function getWhiteLogoAttribute()
     {
         $file = $this->getMedia('logo')->last();
         if ($file) {
@@ -91,6 +105,15 @@ class Setting extends Model implements HasMedia
             return $this->keywords_en;
         }else{
             return $this->keywords_ar;
+        }
+
+    }
+
+    public function getAddressAttribute(){
+        if(\App::getLocale() == 'en'){
+            return $this->address_en;
+        }else{
+            return $this->address_ar;
         }
 
     }

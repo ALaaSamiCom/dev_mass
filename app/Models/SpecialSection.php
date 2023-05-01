@@ -33,6 +33,7 @@ class SpecialSection extends Model implements HasMedia
         'about' => 'About Our Company',
         'Contact' => 'Contact Form',
         'service Page Portfolio' => 'works',
+        'principles'=>'principles',
 
     ];
 

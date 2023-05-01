@@ -16,7 +16,7 @@
             </a>
         </li>
         @can('content_management_access')
-            <li class="c-sidebar-nav-dropdown {{ request()->is("admin/sliders*") ? "c-show" : "" }} {{ request()->is("admin/services*") ? "c-show" : "" }} {{ request()->is("admin/works*") ? "c-show" : "" }} {{ request()->is("admin/categories*") ? "c-show" : "" }} {{ request()->is("admin/special-sections*") ? "c-show" : "" }} {{ request()->is("admin/layaoutplaces*") ? "c-show" : "" }} {{ request()->is("admin/products*") ? "c-show" : "" }} {{ request()->is("admin/our-missions*") ? "c-show" : "" }} {{ request()->is("admin/chooses*") ? "c-show" : "" }}">
+            <li class="c-sidebar-nav-dropdown {{ request()->is("admin/sliders*") ? "c-show" : "" }} {{ request()->is("admin/services*") ? "c-show" : "" }} {{ request()->is("admin/works*") ? "c-show" : "" }} {{ request()->is("admin/categories*") ? "c-show" : "" }} {{ request()->is("admin/special-sections*") ? "c-show" : "" }} {{ request()->is("admin/layaoutplaces*") ? "c-show" : "" }} {{ request()->is("admin/products*") ? "c-show" : "" }} {{ request()->is("admin/our-missions*") ? "c-show" : "" }} {{ request()->is("admin/chooses*") ? "c-show" : "" }} {{ request()->is("admin/testimonials*") ? "c-show" : "" }}">
                 <a class="c-sidebar-nav-dropdown-toggle" href="#">
                     <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
 
@@ -111,6 +111,16 @@
 
                                 </i>
                                 {{ trans('cruds.choose.title') }}
+                            </a>
+                        </li>
+                    @endcan
+                    @can('testimonial_access')
+                        <li class="c-sidebar-nav-item">
+                            <a href="{{ route("admin.testimonials.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/testimonials") || request()->is("admin/testimonials/*") ? "c-active" : "" }}">
+                                <i class="fa-fw far fa-comments c-sidebar-nav-icon">
+
+                                </i>
+                                {{ trans('cruds.testimonial.title') }}
                             </a>
                         </li>
                     @endcan
@@ -480,7 +490,7 @@
                 <ul class="c-sidebar-nav-dropdown-items">
                     @can('setting_access')
                         <li class="c-sidebar-nav-item">
-                            <a href="{{ route("admin.settings.edit",1) }}" class="c-sidebar-nav-link {{ request()->is("admin/settings") || request()->is("admin/settings/*") ? "c-active" : "" }}">
+                            <a href="{{ route("admin.settings.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/settings") || request()->is("admin/settings/*") ? "c-active" : "" }}">
                                 <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
 
                                 </i>
@@ -502,46 +512,46 @@
             </li>
         @endcan
         @php($unread = \App\Models\QaTopic::unreadCount())
+        <li class="c-sidebar-nav-item">
+            <a href="{{ route("admin.messenger.index") }}" class="{{ request()->is("admin/messenger") || request()->is("admin/messenger/*") ? "c-active" : "" }} c-sidebar-nav-link">
+                <i class="c-sidebar-nav-icon fa-fw fa fa-envelope">
+
+                </i>
+                <span>{{ trans('global.messages') }}</span>
+                @if($unread > 0)
+                    <strong>( {{ $unread }} )</strong>
+                @endif
+
+            </a>
+        </li>
+        @if(\Illuminate\Support\Facades\Schema::hasColumn('teams', 'owner_id') && \App\Models\Team::where('owner_id', auth()->user()->id)->exists())
             <li class="c-sidebar-nav-item">
-                <a href="{{ route("admin.messenger.index") }}" class="{{ request()->is("admin/messenger") || request()->is("admin/messenger/*") ? "c-active" : "" }} c-sidebar-nav-link">
-                    <i class="c-sidebar-nav-icon fa-fw fa fa-envelope">
-
+                <a class="{{ request()->is("admin/team-members") || request()->is("admin/team-members/*") ? "c-active" : "" }} c-sidebar-nav-link" href="{{ route("admin.team-members.index") }}">
+                    <i class="c-sidebar-nav-icon fa-fw fa fa-users">
                     </i>
-                    <span>{{ trans('global.messages') }}</span>
-                    @if($unread > 0)
-                        <strong>( {{ $unread }} )</strong>
-                    @endif
-
+                    <span>{{ trans("global.team-members") }}</span>
                 </a>
             </li>
-            @if(\Illuminate\Support\Facades\Schema::hasColumn('teams', 'owner_id') && \App\Models\Team::where('owner_id', auth()->user()->id)->exists())
+        @endif
+        @if(file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php')))
+            @can('profile_password_edit')
                 <li class="c-sidebar-nav-item">
-                    <a class="{{ request()->is("admin/team-members") || request()->is("admin/team-members/*") ? "c-active" : "" }} c-sidebar-nav-link" href="{{ route("admin.team-members.index") }}">
-                        <i class="c-sidebar-nav-icon fa-fw fa fa-users">
+                    <a class="c-sidebar-nav-link {{ request()->is('profile/password') || request()->is('profile/password/*') ? 'c-active' : '' }}" href="{{ route('profile.password.edit') }}">
+                        <i class="fa-fw fas fa-key c-sidebar-nav-icon">
                         </i>
-                        <span>{{ trans("global.team-members") }}</span>
+                        {{ trans('global.change_password') }}
                     </a>
                 </li>
-            @endif
-            @if(file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php')))
-                @can('profile_password_edit')
-                    <li class="c-sidebar-nav-item">
-                        <a class="c-sidebar-nav-link {{ request()->is('profile/password') || request()->is('profile/password/*') ? 'c-active' : '' }}" href="{{ route('profile.password.edit') }}">
-                            <i class="fa-fw fas fa-key c-sidebar-nav-icon">
-                            </i>
-                            {{ trans('global.change_password') }}
-                        </a>
-                    </li>
-                @endcan
-            @endif
-            <li class="c-sidebar-nav-item">
-                <a href="#" class="c-sidebar-nav-link" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
-                    <i class="c-sidebar-nav-icon fas fa-fw fa-sign-out-alt">
+            @endcan
+        @endif
+        <li class="c-sidebar-nav-item">
+            <a href="#" class="c-sidebar-nav-link" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
+                <i class="c-sidebar-nav-icon fas fa-fw fa-sign-out-alt">
 
-                    </i>
-                    {{ trans('global.logout') }}
-                </a>
-            </li>
+                </i>
+                {{ trans('global.logout') }}
+            </a>
+        </li>
     </ul>
 
 </div>

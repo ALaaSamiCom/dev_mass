@@ -1,0 +1,106 @@
+html{
+    direction: rtl;
+}
+.atf-top-header-list li{
+    margin-right: 0;
+    margin-left: 30px;
+}
+.atf-top-header-list li i{
+    margin-left: 10px;
+    margin-right: 0;
+}
+.atf-top-header-list li i.fa-phone-volume{
+    transform: rotate(200deg)
+}
+.atf-site-header.atf-style1 .atf-main-header-in .atf-main-header-right .atf-nav .btn-group.languge{
+    margin-left: 0;
+    margin-right: 200px;
+}
+.carousel-caption{
+    left: 8%;
+    right: 0%;
+   
+}
+.carousel-caption .row{
+    flex-direction: row-reverse;
+}
+.section-title .circle{
+    left: 0;
+    right: 2.5%;
+}
+.section-header .section-title .circle{
+    left: 0;
+    right: 48.7%;
+}
+.btn-group > .btn:not(:first-child), .btn-group > .btn-group:not(:first-child){
+    margin-left: 0;
+    margin-right: -9px;
+}
+#about-service .section-description {
+    margin-right: 0px;
+    margin-left: 100px;
+}
+.atf-themes-btn .fa-angle-right{
+    transform: rotate(180deg);
+    margin-right: 7px;
+}
+.atf-main-btn .atf-themes-btn:hover i{
+    transform: rotate(180deg);
+}
+.atf-main-btn .atf-themes-btn i{
+    transform: rotate(180deg);
+    margin-left: 0;
+}
+#testimonial .fa-arrow-left,
+#testimonial .fa-arrow-right{
+    transform: rotate(180deg);
+}
+#footer .contact-data .toast-header .icon{
+    margin-right: 0;
+    margin-left: 15px;
+}
+#footer .footer-bottom .social-media{
+    text-align: left;
+}
+#footer .footer-links .single-col.links {
+    padding: 0 50px 0 0px;
+}
+#step-steps .steps .setup-content .nextBtn{
+    float: left;
+}
+/**************************************************************/
+@media only screen and (max-width : 991px) {
+    .atf-site-header.atf-style1 .atf-main-header-in .atf-main-header-right .atf-nav .btn-group.languge{
+        margin-right: 0;
+    }
+    #footer .footer-bottom .social-media{
+        text-align: left;
+    }
+    #about-service .section-description{
+        margin-left: 0;
+    }
+    #about-service .atf-themes-btn.more-about{
+        margin-right: 0 !important;
+    }
+ 
+}
+
+/**********************************************ibad********************************/
+@media(min-width:768px) and (max-width:1024px){
+    #home .home-buttuns .atf-themes-btn.mr-4 {
+        margin-top: 10px;
+        margin-right: 0 !important;
+        margin-left: 1.5rem !important;
+    }
+    #home .home-buttuns .atf-themes-btn.mr-4.freeConsulting {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+    #footer .footer-links .single-col.links.company-links{
+        padding: 0 !important;
+    }
+    #footer .footer-links .single-col.links,
+    #footer .footer-links .single-col.links.company-links.comany-information {
+        padding: 0 50px 0 0px !important;
+    }
+}

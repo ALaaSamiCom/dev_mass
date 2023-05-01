@@ -82,7 +82,7 @@
             </div>
             <div class="form-group">
                 <label for="short_description_en">{{ trans('cruds.page.fields.short_description_en') }}</label>
-                <textarea class="form-control ckeditor {{ $errors->has('short_description_en') ? 'is-invalid' : '' }}" name="short_description_en" id="short_description_en">{!! old('short_description_en') !!}</textarea>
+                <textarea class="form-control {{ $errors->has('short_description_en') ? 'is-invalid' : '' }}" name="short_description_en" id="short_description_en">{!! old('short_description_en') !!}</textarea>
                 @if($errors->has('short_description_en'))
                     <div class="invalid-feedback">
                         {{ $errors->first('short_description_en') }}
