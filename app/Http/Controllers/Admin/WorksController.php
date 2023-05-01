@@ -7,6 +7,7 @@ use App\Http\Controllers\Traits\MediaUploadingTrait;
 use App\Http\Requests\MassDestroyWorkRequest;
 use App\Http\Requests\StoreWorkRequest;
 use App\Http\Requests\UpdateWorkRequest;
+use App\Models\Service;
 use App\Models\Work;
 use Gate;
 use Illuminate\Http\Request;
@@ -29,8 +30,9 @@ class WorksController extends Controller
     public function create()
     {
         abort_if(Gate::denies('work_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        $categories = Service::pluck('title_en', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        return view('admin.works.create');
+        return view('admin.works.create', compact('categories'));
     }
 
     public function store(StoreWorkRequest $request)
@@ -51,8 +53,10 @@ class WorksController extends Controller
     public function edit(Work $work)
     {
         abort_if(Gate::denies('work_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        $categories = Service::pluck('title_en', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        return view('admin.works.edit', compact('work'));
+        $work->load('service');
+        return view('admin.works.edit', compact('categories','work'));
     }
 
     public function update(UpdateWorkRequest $request, Work $work)

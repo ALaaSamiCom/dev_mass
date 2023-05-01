@@ -11,6 +11,21 @@
             @method('PUT')
             @csrf
             <div class="form-group">
+                <label class="required" for="category_id">{{ trans('cruds.product.fields.category') }}</label>
+                <select class="form-control select2 {{ $errors->has('category') ? 'is-invalid' : '' }}" name="category_id" id="category_id" required>
+                    @foreach($categories as $id => $entry)
+                        <option value="{{ $id }}" {{ (old('category_id') ? old('category_id') : $work->category->id ?? '') == $id ? 'selected' : '' }}>{{ $entry }}</option>
+                    @endforeach
+                </select>
+                @if($errors->has('category'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('category') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('cruds.product.fields.category_helper') }}</span>
+            </div>
+
+            <div class="form-group">
                 <label for="image">{{ trans('cruds.work.fields.image') }}</label>
                 <div class="needsclick dropzone {{ $errors->has('image') ? 'is-invalid' : '' }}" id="image-dropzone">
                 </div>
@@ -61,6 +76,17 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.work.fields.description_ar_helper') }}</span>
             </div>
+            <div class="form-group">
+                <label class="required" for="url">{{ trans('cruds.work.fields.url') }}</label>
+                <input class="form-control {{ $errors->has('url') ? 'is-invalid' : '' }}" type="text" name="url" id="url" value="{{ old('url', $work->url) }}" required>
+                @if($errors->has('url'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('url') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('cruds.work.fields.url_helper') }}</span>
+            </div>
+
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">
                     {{ trans('global.save') }}
