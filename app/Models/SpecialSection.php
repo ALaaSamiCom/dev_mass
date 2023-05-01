@@ -28,11 +28,11 @@ class SpecialSection extends Model implements HasMedia
         'Services' => 'Our Services',
         'Step' => 'Step By Step?',
         'touch' => 'get in touch',
-        'workس' => 'Our latest work',
+        'works' => 'Our latest work',
         'Portfolio' => 'Portfolio',
         'about' => 'About Our Company',
         'Contact' => 'Contact Form',
-        'work' => 'works',
+        'work' => 'Our  works',
         'principles'=>'principles',
 
     ];
