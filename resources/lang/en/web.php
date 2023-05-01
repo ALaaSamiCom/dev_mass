@@ -40,7 +40,7 @@ return [
     'website'=>'Web Site',
     'rights'=>'© 2023 DEVUN creative. All rights reserved',
     'topfooter'=>'24/7 support for with exceptional service and guaranteed satisfaction',
-    'towtopfoter'=>'Our 24/7 support team is dedicated to listening and bringing your ideas to light.
+    'towtopfooter'=>'Our 24/7 support team is dedicated to listening and bringing your ideas to light.
 									Your
 									time is valuable, and we are here to help',
     'aboutus'=>' About Our Company',

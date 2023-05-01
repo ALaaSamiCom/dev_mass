@@ -25,7 +25,7 @@
                                             </div>
                                             <div class="col-4 col-sm-4">
                                                 <div class="project-links">
-                                                    <a class="icon" href="#">
+                                                    <a class="icon" href="{{$work->}}">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="15"
                                                              height="15" viewBox="0 0 24.113 24.112">
                                                             <path id="globe-Regular_1_"

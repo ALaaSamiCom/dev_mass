@@ -33,6 +33,8 @@ class Work extends Model implements HasMedia
         'title_ar',
         'description_en',
         'description_ar',
+        'category_id',
+        'url',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -77,5 +79,5 @@ class Work extends Model implements HasMedia
         }
     }
 
-  
+
 }
