@@ -78,6 +78,9 @@ class Work extends Model implements HasMedia
             return $this->description_ar;
         }
     }
-
+    public function service()
+    {
+        return $this->belongsTo(Service::class, 'category_id');
+    }
 
 }
