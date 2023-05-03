@@ -43,7 +43,7 @@
             </div>
             <div class="form-group">
                 <label for="description_en">{{ trans('cruds.setting.fields.description_en') }}</label>
-                <textarea class="form-control ckeditor {{ $errors->has('description_en') ? 'is-invalid' : '' }}" name="description_en" id="description_en">{!! old('description_en', $setting->description_en) !!}</textarea>
+                <textarea class="form-control {{ $errors->has('description_en') ? 'is-invalid' : '' }}" name="description_en" id="description_en">{!! old('description_en', $setting->description_en) !!}</textarea>
                 @if($errors->has('description_en'))
                     <div class="invalid-feedback">
                         {{ $errors->first('description_en') }}
@@ -53,7 +53,7 @@
             </div>
             <div class="form-group">
                 <label for="description_ar">{{ trans('cruds.setting.fields.description_ar') }}</label>
-                <textarea class="form-control ckeditor {{ $errors->has('description_ar') ? 'is-invalid' : '' }}" name="description_ar" id="description_ar">{!! old('description_ar', $setting->description_ar) !!}</textarea>
+                <textarea class="form-control  {{ $errors->has('description_ar') ? 'is-invalid' : '' }}" name="description_ar" id="description_ar">{!! old('description_ar', $setting->description_ar) !!}</textarea>
                 @if($errors->has('description_ar'))
                     <div class="invalid-feedback">
                         {{ $errors->first('description_ar') }}
