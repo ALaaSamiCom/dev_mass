@@ -27,7 +27,7 @@ return [
         'Continue'=>' Continue',
         'Back'=>'Back',
         'success-send'=>'success-send',
-
+        'git'=>'Get in touch',
 
         //contact us
     'name'=>'Your Name',
@@ -45,4 +45,6 @@ return [
 									time is valuable, and we are here to help',
     'aboutus'=>' About Our Company',
     'links'=>'Links',
+    'company'=>'Company ',
+
 ];

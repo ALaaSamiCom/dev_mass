@@ -28,7 +28,8 @@ return [
         'Back'=>'السابق',
         'success-send'=>'تم الارسال بنجاح',
 
-
+        'company'=>'الشركة ',
+        'git'=>'إبقى على تواصل',
 
      //contact us
     'name' => 'الاسم',

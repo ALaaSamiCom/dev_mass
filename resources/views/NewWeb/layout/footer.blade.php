@@ -42,8 +42,6 @@
                                                               d="M558.4,2789l-15.415-10.944a9.666,9.666,0,0,1,8.192-4.558h21.5a9.674,9.674,0,0,1,8.191,4.537l-15.373,10.922A6.444,6.444,0,0,1,558.4,2789Zm23.908-6.686-14.362,10.191a10.926,10.926,0,0,1-6.042,1.827,10.68,10.68,0,0,1-5.934-1.806l-14.427-10.213c-.022.279-.043.581-.043.86v12.9a9.69,9.69,0,0,0,9.675,9.675h21.5a9.69,9.69,0,0,0,9.675-9.675v-12.9C582.35,2782.9,582.329,2782.594,582.307,2782.315Z"
                                                               transform="translate(-541.5 -2773.5)" fill="#fff" />
 													</svg>
-
-
 												</span>
                                         <p class="me-auto ">@lang('web.email'):
                                             <br>
@@ -80,7 +78,7 @@
                                 <div class="single-col about-us">
                                     <h4 class="col-title">@lang('web.aboutus')</h4>
                                     <p class="about-description">
-                                        {{$setting->description}}
+                                        {!! $setting->description !!}
                                     </p>
                                 </div>
                             </div>
@@ -112,7 +110,7 @@
                             </div>
                             <div class="col-12 col-sm-12 col-md-6 col-lg-3">
                                 <div class="single-col links company-links">
-                                    <h4 class="col-title">company</h4>
+                                    <h4 class="col-title">@lang('web.company')</h4>
                                     <ul class="company-links">
                                         @forelse($blinks as $blink)
                                             <li>
@@ -135,15 +133,15 @@
                             </div>
                             <div class="col-12 col-sm-12 col-md-6 col-lg-3">
                                 <div class="single-col links company-links comany-information">
-                                    <h4 class="col-title">Get in touch</h4>
+                                    <h4 class="col-title">@lang('web.git')</h4>
                                     <ul class="company-links">
                                         <li>
                                             <span>{{$setting->address}}</span>
                                         </li>
                                         <li>
-													<span>
-														{{$setting->phone}}
-													</span>
+                                            <span>
+                                                {{$setting->phone}}
+                                            </span>
                                         </li>
                                         <li>
                                             <span>{{$setting->email}}</span>
@@ -166,7 +164,7 @@
                                     <ul class="social-media">
                                         @forelse($links as $link)
                                             <li>
-                                                <a href="{{$link->value}}" class="social-link">
+                                                <a target="_blank" href="{{$link->value}}" class="social-link">
                                                     <i class="fab fa-{{$link->title}}"></i>
                                                 </a>
                                             </li>
