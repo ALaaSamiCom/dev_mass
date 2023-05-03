@@ -28,7 +28,7 @@ return [
         'Back'=>'Back',
         'success-send'=>'success-send',
         'git'=>'Get in touch',
-
+        'startfree'=>'Start Free Consulting',
         //contact us
     'name'=>'Your Name',
     'email' => 'Your Email ',

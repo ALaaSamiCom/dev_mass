@@ -40,7 +40,7 @@
                                                 </g>
                                             </svg>
 
-                                            Discover more
+                                            @lang('web.discover_more')
                                             <i class="fa fa-angle-right ml-2"></i></a>
                                     </div>
                                     <div class="atf-main-btn atf-main-btn2 mt-3">

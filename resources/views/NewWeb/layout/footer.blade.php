@@ -7,8 +7,6 @@
                     <div class="top-footer">
                         <p>@lang('web.topfooter')</p>
                         <span>@lang('web.towtopfooter')</span>
-
-
                     </div>
                     <div class="contact-data">
                         <div class="row">
@@ -64,7 +62,7 @@
 												</span>
                                         <p class="me-auto ">@lang('web.website'):
                                             <br>
-                                            <span class="me-auto ">{{url(app()->getLocale())}}</span>
+                                            <span class="me-auto ">devun.net</span>
                                         </p>
                                     </div>
 
