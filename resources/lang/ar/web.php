@@ -47,6 +47,6 @@ return [
     'aboutus'=>' عن شركتنا',
     'links'=>'روابط',
     'rights'=>' حقوق النشر محفوظة لشركة ديفون © 2023',
-
+    'startfree'=>'Start  FREE Consulting',
 
 ];

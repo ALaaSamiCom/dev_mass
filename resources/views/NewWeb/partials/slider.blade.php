@@ -45,8 +45,7 @@
                                     </div>
                                     <div class="atf-main-btn atf-main-btn2 mt-3">
                                         <a href="#"
-                                           class="page-scroll atf-themes-btn freeConsulting mr-4"><span></span><span></span><span></span><span></span>Start
-                                            FREE Consulting<i class="fa fa-angle-right ml-2"></i></a>
+                                           class="page-scroll atf-themes-btn freeConsulting mr-4"><span></span><span></span><span></span><span></span>@lang('web.startfree')<i class="fa fa-angle-right ml-2"></i></a>
                                     </div>
                                 </div>
                             </div>
