@@ -25,11 +25,11 @@
                             {!!$section->description!!}
 
                         </p>
-                        <div class="atf-main-btn atf-main-btn2 mt-3">
-                            <a href="#"
-                               class="page-scroll atf-themes-btn mr-4 more-about"><span></span><span></span><span></span><span></span>More
-                                About Us<i class="fa fa-angle-right ml-2"></i></a>
-                        </div>
+{{--                        <div class="atf-main-btn atf-main-btn2 mt-3">--}}
+{{--                            <a href="#"--}}
+{{--                               class="page-scroll atf-themes-btn mr-4 more-about"><span></span><span></span><span></span><span></span>More--}}
+{{--                                About Us<i class="fa fa-angle-right ml-2"></i></a>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
             </div>
