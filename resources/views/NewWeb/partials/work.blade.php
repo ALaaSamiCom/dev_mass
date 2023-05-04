@@ -21,7 +21,7 @@
                                         <div class="row">
                                             <div class="col-8 col-sm-8">
                                                 <h6 class="prpject-name">{{$work->title}}</h6>
-                                                <span class="service-name">{{$work->description}}</span>
+                                                <span class="service-name">{!! $work->description !!}</span>
                                             </div>
                                             <div class="col-4 col-sm-4">
                                                 <div class="project-links">
