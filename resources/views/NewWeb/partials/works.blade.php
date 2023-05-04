@@ -33,7 +33,7 @@
                                 <img src="{{$product->image->geturl()}}" />
                             </div>
                             <h6>{{$product->title}}</h6>
-                            <p>{{$product->short_description}}</p>
+                            <p>{!! $product->short_description !!}</p>
                         </div>
                     </div>
                 @empty
