@@ -10,6 +10,7 @@ use App\Models\OurMission;
 use App\Models\Page;
 use App\Models\Product;
 use App\Models\Service;
+use App\Models\Setting;
 use App\Models\Slider;
 use App\Models\SpecialSection;
 use App\Models\StepByStep;
@@ -19,6 +20,13 @@ use Illuminate\Http\Request;
 class WebController extends Controller
 {
     //
+    public  $theme ;
+
+    public function __construct(Request $request)
+    {
+        $settings = Setting::first();
+        return $this->theme = $settings->theme;
+    }
     public function index(Request $request)
     {
         $sections = SpecialSection::where('place_id',1)->where('status',0)->orderBy('order', 'ASC')->get();
@@ -52,7 +60,8 @@ class WebController extends Controller
         // $latestproducts = Work::orderBy('created_at', 'ASC')->chunk(3 ,function($latestproducts));
         $alinks = Page::where('layout',0)->get();
         $blinks  = Page::where('layout',1)->get();
-        return view('NewWeb.index',compact('sections','sliders','chooses'
+
+        return view($this->theme.'.index',compact('sections','sliders','chooses'
             ,'services','steps','our_missions' ,'categories' ,'products' ,'items','works','alinks','blinks'));
     }
 
@@ -61,7 +70,8 @@ class WebController extends Controller
         $sliders = Slider::all();
         $categories=Category::all();
         $products=Product::orderBy('category_id')->get();
-        return view('web.product',compact('categories' ,'products','sliders'));
+
+        return view($this->theme.'.product',compact('categories' ,'products','sliders'));
     }
 
     public function service($lang,$id)
@@ -70,7 +80,8 @@ class WebController extends Controller
         $sliders = Slider::where('place_id',2)->get();
         $service=Service::with('works')->findOrFail($id);
 //        $products=Product::where('category_id',$id)->get();
-        return view('web.service',compact('service','sliders','sections'));
+
+        return view($this->theme.'.service',compact('service','sliders','sections'));
     }
 
 
@@ -79,7 +90,7 @@ class WebController extends Controller
         $sections = SpecialSection::where('place_id',3)->where('status',0)->orderBy('order', 'ASC')->get();
         $page=Page::with('Items')->where('page_title',$title)->first();
 //        $products=Product::where('category_id',$id)->get();
-        return view('web.page',compact('page','sections'));
+        return view($this->theme.'.page',compact('page','sections'));
     }
 
     public function contact(Request $request)

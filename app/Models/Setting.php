@@ -45,6 +45,7 @@ class Setting extends Model implements HasMedia
         'body_tags',
         'latitudes',
         'meridians',
+        'theme',
         'created_at',
         'updated_at',
         'deleted_at',
