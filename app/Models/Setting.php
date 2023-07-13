@@ -39,12 +39,12 @@ class Setting extends Model implements HasMedia
         'email',
         'phone',
         'website',
-        'address_en',
-        'address_ar',
         'head_tags',
         'body_tags',
         'latitudes',
         'meridians',
+        'place_en',
+        'place_ar',
         'theme',
         'created_at',
         'updated_at',
@@ -110,11 +110,11 @@ class Setting extends Model implements HasMedia
 
     }
 
-    public function getAddressAttribute(){
+    public function getPlaceAttribute(){
         if(\App::getLocale() == 'en'){
-            return $this->address_en;
+            return $this->place_en;
         }else{
-            return $this->address_ar;
+            return $this->place_ar;
         }
 
     }

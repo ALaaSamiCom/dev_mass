@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreContactRequest;
+use App\Models\Article;
 use App\Models\Category;
 use App\Models\Choose;
 use App\Models\Contact;
@@ -9,98 +11,140 @@ use App\Models\Item;
 use App\Models\OurMission;
 use App\Models\Page;
 use App\Models\Product;
+use App\Models\Project;
 use App\Models\Service;
+use App\Models\ServiceFeature;
 use App\Models\Setting;
 use App\Models\Slider;
 use App\Models\SpecialSection;
 use App\Models\StepByStep;
+use App\Models\Testimonial;
 use App\Models\Work;
 use Illuminate\Http\Request;
 
 class WebController extends Controller
 {
     //
-    public  $theme ;
+    public $theme;
 
     public function __construct(Request $request)
     {
         $settings = Setting::first();
         return $this->theme = $settings->theme;
     }
+
     public function index(Request $request)
     {
-        $sections = SpecialSection::where('place_id',1)->where('status',0)->orderBy('order', 'ASC')->get();
-        $sliders = Slider::where('place_id',1)->get();
-        $chooses= Choose::orderBy('created_at', 'ASC')->take(3)->get();
-        $services = Service::orderBy('created_at', 'ASC')->take(6)->get();
-        $steps =StepByStep::with('stepItemItems')->get();
-        $items=Item::orderBy('order', 'ASC')->get();
-        $our_missions =OurMission::orderBy('order', 'ASC')->take(3)->get();
-        $categories=Service::all();
-        $products=Product::with('service')->orderBy('category_id')->take(6)->get();
-        $latestproducts = Work::orderBy('created_at', 'ASC')->take(6)->get();
-        // $latestproducts = Work::orderBy('created_at', 'ASC')->chunk(3 ,function($latestproducts));
-
-        return view('web.index',compact('sections','sliders','chooses'
-            ,'services','steps','our_missions' ,'categories' ,'products' ,'items','latestproducts'));
-    }
-    public function newweb(Request $request)
-    {
-//        dd('aa');
-        $sections = SpecialSection::where('place_id',1)->where('status',0)->orderBy('order', 'ASC')->get();
-        $sliders = Slider::where('place_id',1)->get();
-        $chooses= Choose::orderBy('created_at', 'ASC')->take(3)->get();
-        $services = Service::orderBy('created_at', 'ASC')->take(6)->get();
-        $steps =StepByStep::with('stepItemItems')->get();
-        $items=Item::orderBy('order', 'ASC')->get();
-        $our_missions =OurMission::orderBy('order', 'ASC')->take(3)->get();
-        $categories=Service::all();
-        $products=Product::with('service')->orderBy('category_id')->take(6)->get();
-        $works = Work::orderBy('created_at', 'ASC')->take(6)->get();
-        // $latestproducts = Work::orderBy('created_at', 'ASC')->chunk(3 ,function($latestproducts));
-        $alinks = Page::where('layout',0)->get();
-        $blinks  = Page::where('layout',1)->get();
-
-        return view($this->theme.'.index',compact('sections','sliders','chooses'
-            ,'services','steps','our_missions' ,'categories' ,'products' ,'items','works','alinks','blinks'));
-    }
-
-    public function product(Request $request)
-    {
+        $about_us_section = SpecialSection::where('section_place', 'about_us')->first();
+        $sections = SpecialSection::where('place_id', 1)->orderBy('order', 'ASC')->get();
         $sliders = Slider::all();
-        $categories=Category::all();
-        $products=Product::orderBy('category_id')->get();
+        $projects = Project::all();
+        $testimonials = Testimonial::all();
+        $articles = Article::all();
+        $chooses = Choose::orderBy('created_at', 'ASC')->take(3)->get();
+        $services = Service::orderBy('created_at', 'ASC')->get();
+        $steps = StepByStep::with('stepItemItems')->get();
+        $items = Item::orderBy('order', 'ASC')->get();
+        $our_missions = OurMission::orderBy('order', 'ASC')->take(3)->get();
+        $categories = Service::all();
 
-        return view($this->theme.'.product',compact('categories' ,'products','sliders'));
+        return view('NewWeb.index', compact('sections', 'about_us_section', 'sliders', 'chooses', 'projects', 'testimonials'
+            , 'articles', 'services', 'steps', 'our_missions', 'categories', 'items'));
     }
 
-    public function service($lang,$id)
+    public function services($id, Request $request)
     {
-        $sections = SpecialSection::where('place_id',2)->where('status',0)->orderBy('order', 'ASC')->get();
-        $sliders = Slider::where('place_id',2)->get();
-        $service=Service::with('works')->findOrFail($id);
-//        $products=Product::where('category_id',$id)->get();
+        $about_us_section = SpecialSection::where('section_place', 'about_us')->first();
+        $sections = SpecialSection::where('place_id', 6)->orderBy('order', 'ASC')->get();
+        $services = Service::all();
+        $service = Service::with('features')->where('id', $id)->first();
+        $projects = Project::with('services')->where('service_id', $id)->get();
+        $testimonials = Testimonial::all();
 
-        return view($this->theme.'.service',compact('service','sliders','sections'));
+        return view('NewWeb.services', compact('sections', 'about_us_section', 'testimonials', 'services', 'service', 'projects'));
+    }
+
+    public function portfolio(Request $request)
+    {
+        $about_us_section = SpecialSection::where('section_place', 'about_us')->first();
+        $sections = SpecialSection::where('place_id', 5)->orderBy('order', 'ASC')->get();
+        $projects = Project::all();
+        $testimonials = Testimonial::all();
+        $articles = Article::all();
+        $services = Service::with('projects')->get();
+
+        return view('NewWeb.portfolio', compact('sections', 'about_us_section', 'projects', 'services', 'testimonials'
+            , 'articles'));
+    }
+
+    public function our_company(Request $request)
+    {
+        $about_us_section = SpecialSection::where('section_place', 'about_us')->first();
+        $sections = SpecialSection::where('place_id', 2)->orderBy('order', 'ASC')->get();
+        $projects = Project::all();
+        $testimonials = Testimonial::all();
+        $articles = Article::all();
+        $services = Service::all();
+
+        return view('NewWeb.ourCompany', compact('sections', 'about_us_section', 'projects', 'testimonials', 'services'
+            , 'articles'));
+    }
+
+    public function blog(Request $request)
+    {
+        $about_us_section = SpecialSection::where('section_place', 'about_us')->first();
+        $sections = SpecialSection::where('place_id', 3)->orderBy('order', 'ASC')->get();
+        $projects = Project::all();
+        $testimonials = Testimonial::all();
+        $articles_query = Article::query();
+        $articles = $articles_query->orderBy('created_at', 'DESC')->get();
+        $last_five_articles = $articles_query->orderBy('created_at', 'DESC')->skip(1)->take(5)->get();
+        $last_article = $articles_query->orderBy('created_at', 'DESC')->first();
+        $services = Service::all();
+
+        return view('NewWeb.blog', compact('sections', 'about_us_section', 'projects', 'testimonials', 'services'
+            , 'articles', 'last_five_articles', 'last_article'));
+    }
+
+    public function blog_details($id)
+    {
+        $about_us_section = SpecialSection::where('section_place', 'about_us')->first();
+        $sections = SpecialSection::where('place_id', 7)->orderBy('order', 'ASC')->get();
+        $projects = Project::all();
+        $testimonials = Testimonial::all();
+        $articles_query = Article::query();
+        $articles = $articles_query->get();
+        $article = $articles_query->where('id', $id)->first();
+//dd($article);
+        $services = Service::all();
+
+        return view('NewWeb.blog_details', compact('sections', 'about_us_section', 'projects', 'testimonials', 'services'
+            , 'articles','article'));
+    }
+
+    public function quote(Request $request)
+    {
+        $about_us_section = SpecialSection::where('section_place', 'about_us')->first();
+        $sections = SpecialSection::where('place_id', 4)->orderBy('order', 'ASC')->get();
+        $projects = Project::all();
+        $testimonials = Testimonial::all();
+        $articles = Article::all();
+        $services = Service::all();
+
+        return view('NewWeb.quote', compact('sections', 'projects', 'about_us_section', 'testimonials', 'services'
+            , 'articles'));
     }
 
 
-    public function page($lang,$title)
+    public function send_consultation(Request $request)
     {
-        $sections = SpecialSection::where('place_id',3)->where('status',0)->orderBy('order', 'ASC')->get();
-        $page=Page::with('Items')->where('page_title',$title)->first();
-//        $products=Product::where('category_id',$id)->get();
-        return view($this->theme.'.page',compact('page','sections'));
-    }
-
-    public function contact(Request $request)
-    {
+        dd($request);
         $contact = Contact::create($request->all());
         if ($contact)
-            $msg = 'OK';
+            $msg = 'success';
         else
-            $msg = 'false';
+            $msg = 'failed';
 
-        return response()->json(['msg'=>$msg]);
+        return redirect()->back()->with('status', true);
     }
 }

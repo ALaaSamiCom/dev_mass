@@ -40,15 +40,20 @@
                 <span class="help-block">{{ trans('cruds.contact.fields.phone_helper') }}</span>
             </div>
             <div class="form-group">
-                <label class="required" for="subject">{{ trans('cruds.contact.fields.subject') }}</label>
-                <input class="form-control {{ $errors->has('subject') ? 'is-invalid' : '' }}" type="text" name="subject" id="subject" value="{{ old('subject', '') }}" required>
-                @if($errors->has('subject'))
+                <label class="required" for="service_id">{{ trans('cruds.contact.fields.service') }}</label>
+                <select class="form-control select2 {{ $errors->has('service') ? 'is-invalid' : '' }}" name="service_id" id="service_id" required>
+                    @foreach($services as $id => $entry)
+                        <option value="{{ $id }}" {{ old('service_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
+                    @endforeach
+                </select>
+                @if($errors->has('service'))
                     <div class="invalid-feedback">
-                        {{ $errors->first('subject') }}
+                        {{ $errors->first('service') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.contact.fields.subject_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.contact.fields.service_helper') }}</span>
             </div>
+
             <div class="form-group">
                 <label for="message">{{ trans('cruds.contact.fields.message') }}</label>
                 <textarea class="form-control ckeditor {{ $errors->has('message') ? 'is-invalid' : '' }}" name="message" id="message">{!! old('message') !!}</textarea>

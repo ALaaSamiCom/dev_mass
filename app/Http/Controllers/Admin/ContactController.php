@@ -8,6 +8,7 @@ use App\Http\Requests\MassDestroyContactRequest;
 use App\Http\Requests\StoreContactRequest;
 use App\Http\Requests\UpdateContactRequest;
 use App\Models\Contact;
+use App\Models\Service;
 use Gate;
 use Illuminate\Http\Request;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -21,7 +22,7 @@ class ContactController extends Controller
     {
         abort_if(Gate::denies('contact_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $contacts = Contact::all();
+        $contacts = Contact::with(['service'])->get();
 
         return view('admin.contacts.index', compact('contacts'));
     }
@@ -29,8 +30,9 @@ class ContactController extends Controller
     public function create()
     {
         abort_if(Gate::denies('contact_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        $services = Service::pluck('title_en', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        return view('admin.contacts.create');
+        return view('admin.contacts.create', compact('services'));
     }
 
     public function store(StoreContactRequest $request)
@@ -47,8 +49,10 @@ class ContactController extends Controller
     public function edit(Contact $contact)
     {
         abort_if(Gate::denies('contact_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        $services = Service::pluck('title_en', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $contact->load('service');
 
-        return view('admin.contacts.edit', compact('contact'));
+        return view('admin.contacts.edit', compact('contact','services'));
     }
 
     public function update(UpdateContactRequest $request, Contact $contact)
@@ -61,6 +65,7 @@ class ContactController extends Controller
     public function show(Contact $contact)
     {
         abort_if(Gate::denies('contact_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        $contact->load('service');
 
         return view('admin.contacts.show', compact('contact'));
     }

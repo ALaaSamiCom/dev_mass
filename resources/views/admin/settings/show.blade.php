@@ -123,6 +123,22 @@
                             {{ $setting->meridians }}
                         </td>
                     </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.setting.fields.place_en') }}
+                        </th>
+                        <td>
+                            {{ $setting->place_en }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.setting.fields.place_ar') }}
+                        </th>
+                        <td>
+                            {{ $setting->place_ar }}
+                        </td>
+                    </tr>
                 </tbody>
             </table>
             <div class="form-group">

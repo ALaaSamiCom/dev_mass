@@ -9,6 +9,7 @@ use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Client;
 use App\Models\Project;
 use App\Models\ProjectStatus;
+use App\Models\Service;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,7 +20,7 @@ class ProjectController extends Controller
     {
         abort_if(Gate::denies('project_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $projects = Project::with(['client', 'status'])->get();
+        $projects = Project::with(['client', 'status','services'])->get();
 
         return view('admin.projects.index', compact('projects'));
     }
@@ -31,8 +32,9 @@ class ProjectController extends Controller
         $clients = Client::pluck('first_name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $statuses = ProjectStatus::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $services = Service::pluck('title_en', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        return view('admin.projects.create', compact('clients', 'statuses'));
+        return view('admin.projects.create', compact('clients', 'statuses','services'));
     }
 
     public function store(StoreProjectRequest $request)
@@ -49,14 +51,16 @@ class ProjectController extends Controller
         $clients = Client::pluck('first_name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $statuses = ProjectStatus::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $services = Service::pluck('title_en', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $project->load('client', 'status');
+        $project->load('client', 'status','services');
 
-        return view('admin.projects.edit', compact('clients', 'project', 'statuses'));
+        return view('admin.projects.edit', compact('clients', 'project', 'statuses','services'));
     }
 
     public function update(UpdateProjectRequest $request, Project $project)
     {
+
         $project->update($request->all());
 
         return redirect()->route('admin.projects.index');

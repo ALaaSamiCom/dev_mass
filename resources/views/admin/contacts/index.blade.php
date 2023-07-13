@@ -35,7 +35,7 @@
                             {{ trans('cruds.contact.fields.phone') }}
                         </th>
                         <th>
-                            {{ trans('cruds.contact.fields.subject') }}
+                            {{ trans('cruds.contact.fields.service') }}
                         </th>
                         <th>
                             &nbsp;
@@ -61,7 +61,7 @@
                                 {{ $contact->phone ?? '' }}
                             </td>
                             <td>
-                                {{ $contact->subject ?? '' }}
+                                {{ $contact->service->title ?? '' }}
                             </td>
                             <td>
                                 @can('contact_show')
@@ -142,7 +142,7 @@
       $($.fn.dataTable.tables(true)).DataTable()
           .columns.adjust();
   });
-  
+
 })
 
 </script>

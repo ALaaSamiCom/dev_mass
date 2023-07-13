@@ -131,6 +131,26 @@
                 <span class="help-block">{{ trans('cruds.setting.fields.meridians_helper') }}</span>
             </div>
             <div class="form-group">
+                <label for="place_en">{{ trans('cruds.setting.fields.place_en') }}</label>
+                <input class="form-control {{ $errors->has('place_en') ? 'is-invalid' : '' }}" type="text" name="place_en" id="place_en" value="{{ old('place_en', '') }}">
+                @if($errors->has('place_en'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('place_en') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('cruds.setting.fields.place_en_helper') }}</span>
+            </div>
+            <div class="form-group">
+                <label for="place_ar">{{ trans('cruds.setting.fields.place_ar') }}</label>
+                <input class="form-control {{ $errors->has('place_ar') ? 'is-invalid' : '' }}" type="text" name="place_ar" id="place_ar" value="{{ old('place_ar', '') }}">
+                @if($errors->has('place_ar'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('place_ar') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('cruds.setting.fields.place_ar_helper') }}</span>
+            </div>
+            <div class="form-group">
                 <button class="btn btn-danger" type="submit">
                     {{ trans('global.save') }}
                 </button>

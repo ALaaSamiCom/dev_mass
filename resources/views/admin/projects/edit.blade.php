@@ -79,6 +79,20 @@
                 <span class="help-block">{{ trans('cruds.project.fields.status_helper') }}</span>
             </div>
             <div class="form-group">
+                <label class="required" for="service_id">{{ trans('cruds.project.fields.services') }}</label>
+                <select class="form-control select2 {{ $errors->has('services') ? 'is-invalid' : '' }}" name="service_id" id="service_id" required>
+                    @foreach($services as $id => $entry)
+                        <option value="{{ $id }}" {{ (old('client_id') ? old('client_id') : $project->services->id ?? '') == $id ? 'selected' : '' }}>{{ $entry }}</option>
+                    @endforeach
+                </select>
+                @if($errors->has('services'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('services') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('cruds.project.fields.services') }}</span>
+            </div>
+            <div class="form-group">
                 <button class="btn btn-danger" type="submit">
                     {{ trans('global.save') }}
                 </button>

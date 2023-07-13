@@ -28,8 +28,7 @@ class StoreContactRequest extends FormRequest
                 'string',
                 'required',
             ],
-            'subject' => [
-                'string',
+            'service_id' => [
                 'required',
             ],
             'message' => [

@@ -48,13 +48,22 @@ class Service extends Model implements HasMedia
     {
         return $this->hasMany(Product::class, 'category_id', 'id');
     }
+
+    public function projects()
+    {
+        return $this->hasMany(Project::class, 'service_id', 'id');
+    }public function features()
+{
+    return $this->hasMany(ServiceFeature::class, 'service_id', 'id');
+}
+
     public function getIconAttribute()
     {
         $file = $this->getMedia('icon')->last();
         if ($file) {
-            $file->url       = $file->getUrl();
+            $file->url = $file->getUrl();
             $file->thumbnail = $file->getUrl('thumb');
-            $file->preview   = $file->getUrl('preview');
+            $file->preview = $file->getUrl('preview');
         }
 
         return $file;
@@ -65,18 +74,21 @@ class Service extends Model implements HasMedia
         return $date->format('Y-m-d H:i:s');
     }
 
-    public function getTitleAttribute(){
-        if(\App::getLocale() == 'en'){
+    public function getTitleAttribute()
+    {
+        if (\App::getLocale() == 'en') {
             return $this->title_en;
-        }else{
+        } else {
             return $this->title_ar;
 
         }
     }
-    public function getDescriptionAttribute(){
-        if(\App::getLocale() == 'en'){
+
+    public function getDescriptionAttribute()
+    {
+        if (\App::getLocale() == 'en') {
             return $this->description_en;
-        }else{
+        } else {
             return $this->description_ar;
         }
     }

@@ -1,7 +1,7 @@
 @extends('NewWeb.layout.parent')
 @section('content')
 
-    @include('NewWeb.partials.pageheader')
+    @include('NewWeb.partials.page_head')
 
     @foreach($sections as $section)
         @include('NewWeb.partials.'.$section->section_place)

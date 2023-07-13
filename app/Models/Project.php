@@ -29,6 +29,7 @@ class Project extends Model
         'start_date',
         'budget',
         'status_id',
+        'service_id',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -37,6 +38,11 @@ class Project extends Model
     public function client()
     {
         return $this->belongsTo(Client::class, 'client_id');
+    }
+
+    public function services()
+    {
+        return $this->belongsTo(Service::class, 'service_id');
     }
 
     public function getStartDateAttribute($value)

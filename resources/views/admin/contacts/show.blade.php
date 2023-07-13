@@ -49,10 +49,10 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.contact.fields.subject') }}
+                            {{ trans('cruds.contact.fields.service') }}
                         </th>
                         <td>
-                            {{ $contact->subject }}
+                            {{ $contact->service->title }}
                         </td>
                     </tr>
                     <tr>

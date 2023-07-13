@@ -3,7 +3,7 @@
 use App\Http\Controllers\WebController;
 
 //Route::redirect('/', '/ar');
-Route::get('/',function(){
+Route::get('/', function () {
     return redirect()->to(url('/ar'));
 });
 Route::get('/home', function () {
@@ -14,21 +14,26 @@ Route::get('/home', function () {
     return redirect()->route('admin.home');
 });
 
-Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'], 'middleware' => 'setlocale'], function() {
-  Route::get('/', [ WebController::class ,'newweb'])->name('web.home');
-    Route::get('/newweb', [ WebController::class ,'index'])->name('web.newweb');
 
-    Route::get('product', [WebController::class,'product']);
-    Route::get('service/{id}/{title}', [WebController::class,'service']);
-    Route::get('page/{title}', [WebController::class,'page']);
+
+Route::group([
+    'prefix' => LaravelLocalization::setLocale(),
+    'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+], function () {
+
+    Route::get('/', [WebController::class, 'index'])->name('web.home');
+    Route::get('/services', [WebController::class, 'services'])->name('web.services');
+    Route::get('/services/{id}', [WebController::class, 'services'])->name('web.service');
+    Route::get('/portfolio', [WebController::class, 'portfolio'])->name('web.portfolio');
+    Route::get('/our_company', [WebController::class, 'our_company'])->name('web.our_company');
+    Route::get('/blog', [WebController::class, 'blog'])->name('web.blog');
+    Route::get('/blog_details/{id}', [WebController::class, 'blog_details'])->name('web.blog_details');
+    Route::get('/quote', [WebController::class, 'quote'])->name('web.quote');
+    Route::post('/send_consultation', [WebController::class, 'send_consultation']);
 
     Route::get('/sitemap.xml', 'SitemapXmlController@index');
 
 });
-Route::post('save', [WebController::class,'contact']);
-
-
-
 
 
 Auth::routes();
@@ -202,6 +207,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('products/ckmedia', 'ProductController@storeCKEditorImages')->name('products.storeCKEditorImages');
     Route::resource('products', 'ProductController');
 
+    // Product
+    Route::delete('service_features/destroy', 'ServiceFeatureController@massDestroy')->name('service_features.massDestroy');
+    Route::post('service_features/media', 'ServiceFeatureController@storeMedia')->name('service_features.storeMedia');
+    Route::post('service_features/ckmedia', 'ServiceFeatureController@storeCKEditorImages')->name('service_features.storeCKEditorImages');
+    Route::resource('service_features', 'ServiceFeatureController');
+
     // Our Mission
     Route::delete('our-missions/destroy', 'OurMissionController@massDestroy')->name('our-missions.massDestroy');
     Route::post('our-missions/media', 'OurMissionController@storeMedia')->name('our-missions.storeMedia');
@@ -213,6 +224,18 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('chooses/media', 'ChooseController@storeMedia')->name('chooses.storeMedia');
     Route::post('chooses/ckmedia', 'ChooseController@storeCKEditorImages')->name('chooses.storeCKEditorImages');
     Route::resource('chooses', 'ChooseController');
+
+    // Testimonials
+    Route::delete('testimonials/destroy', 'TestimonialsController@massDestroy')->name('testimonials.massDestroy');
+    Route::post('testimonials/media', 'TestimonialsController@storeMedia')->name('testimonials.storeMedia');
+    Route::post('testimonials/ckmedia', 'TestimonialsController@storeCKEditorImages')->name('testimonials.storeCKEditorImages');
+    Route::resource('testimonials', 'TestimonialsController');
+
+    // Articles
+    Route::delete('articles/destroy', 'ArticleController@massDestroy')->name('articles.massDestroy');
+    Route::post('articles/media', 'ArticleController@storeMedia')->name('articles.storeMedia');
+    Route::post('articles/ckmedia', 'ArticleController@storeCKEditorImages')->name('articles.storeCKEditorImages');
+    Route::resource('articles', 'ArticleController');
 
     // Step By Step
     Route::delete('step-by-steps/destroy', 'StepByStepController@massDestroy')->name('step-by-steps.massDestroy');

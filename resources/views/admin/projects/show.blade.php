@@ -71,6 +71,14 @@
                             {{ $project->status->name ?? '' }}
                         </td>
                     </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.project.fields.services') }}
+                        </th>
+                        <td>
+                            {{ $project->services->title_en ?? '' }}
+                        </td>
+                    </tr>
                 </tbody>
             </table>
             <div class="form-group">

@@ -28,7 +28,7 @@ class Contact extends Model implements HasMedia
         'name',
         'email',
         'phone',
-        'subject',
+        'service_id',
         'message',
         'created_at',
         'updated_at',
@@ -44,5 +44,9 @@ class Contact extends Model implements HasMedia
     protected function serializeDate(DateTimeInterface $date)
     {
         return $date->format('Y-m-d H:i:s');
+    }
+    public function service()
+    {
+        return $this->belongsTo(Service::class, 'service_id');
     }
 }
