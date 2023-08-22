@@ -63,6 +63,18 @@ class Article extends Model implements HasMedia
         return $file;
     }
 
+    public function getAuthorImageAttribute()
+    {
+        $file = $this->getMedia('author_image')->last();
+        if ($file) {
+            $file->url = $file->getUrl();
+            $file->thumbnail = $file->getUrl('thumb');
+            $file->preview = $file->getUrl('preview');
+        }
+
+        return $file;
+    }
+
     public function getTitleAttribute()
     {
         if (\App::getLocale() == 'en') {
@@ -90,6 +102,7 @@ class Article extends Model implements HasMedia
             return $this->author_name_ar;
         }
     }
+
     public function getAuthorJobAttribute()
     {
         if (\App::getLocale() == 'en') {

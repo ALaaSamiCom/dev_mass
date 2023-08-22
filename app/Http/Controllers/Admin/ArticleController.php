@@ -29,7 +29,7 @@ class ArticleController extends Controller
     {
         abort_if(Gate::denies('article_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $articles = Article::with([ 'media'])->get();
+        $articles = Article::with(['media'])->get();
 
         return view('admin.articles.index', compact('articles'));
     }
@@ -50,7 +50,7 @@ class ArticleController extends Controller
             $article->addMedia(public_path('uploads/' . basename($request->input('image'))))->toMediaCollection('image');
         }
         if ($request->input('author_image', false)) {
-            $article->addMedia(public_path('uploads/' . basename($request->input('author_image'))))->toMediaCollection('image');
+            $article->addMedia(public_path('uploads/' . basename($request->input('author_image'))))->toMediaCollection('author_image');
         }
 
         if ($media = $request->input('ck-media', false)) {
@@ -70,7 +70,7 @@ class ArticleController extends Controller
 
     public function update(UpdateArticleRequest $request, Article $article)
     {
-        $article->update($request->all());
+       $article->update($request->all());
 
         if ($request->input('image', false)) {
             if (!$article->image || $request->input('image') !== $article->image->file_name) {
@@ -81,6 +81,16 @@ class ArticleController extends Controller
             }
         } elseif ($article->image) {
             $article->image->delete();
+        }
+        if ($request->input('author_image', false)) {
+            if (!$article->author_image || $request->input('author_image') !== $article->author_image->file_name) {
+                if ($article->author_image) {
+                    $article->author_image->delete();
+                }
+                $article->addMedia(public_path('uploads/' . basename($request->input('author_image'))))->toMediaCollection('author_image');
+            }
+        } elseif ($article->author_image) {
+            $article->author_image->delete();
         }
 
         return redirect()->route('admin.articles.index');
@@ -113,10 +123,10 @@ class ArticleController extends Controller
     {
         abort_if(Gate::denies('article_create') && Gate::denies('article_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $model         = new ServiceFeature();
-        $model->id     = $request->input('crud_id', 0);
+        $model = new Article();
+        $model->id = $request->input('crud_id', 0);
         $model->exists = true;
-        $media         = $model->addMediaFromRequest('upload')->toMediaCollection('ck-media');
+        $media = $model->addMediaFromRequest('upload')->toMediaCollection('ck-media');
 
         return response()->json(['id' => $media->id, 'url' => $media->getUrl()], Response::HTTP_CREATED);
     }

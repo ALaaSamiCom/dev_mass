@@ -61,6 +61,7 @@ class SettingsController extends Controller
 
         if ($request->input('logo', false)) {
             if (!$setting->logo || $request->input('logo') !== $setting->logo->file_name) {
+//                dd($setting);
                 if ($setting->logo) {
                     $setting->logo->delete();
                 }
@@ -69,9 +70,10 @@ class SettingsController extends Controller
         } elseif ($setting->logo) {
             $setting->logo->delete();
         }
+//        dd($setting);
 
 //        return redirect()->route('admin.settings.index');
-        return redirect()->back()->with('message',trans('global.update_success'));
+        return redirect()->back()->with('message', trans('global.update_success'));
 
     }
 
@@ -102,10 +104,10 @@ class SettingsController extends Controller
     {
         abort_if(Gate::denies('setting_create') && Gate::denies('setting_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $model         = new Setting();
-        $model->id     = $request->input('crud_id', 0);
+        $model = new Setting();
+        $model->id = $request->input('crud_id', 0);
         $model->exists = true;
-        $media         = $model->addMediaFromRequest('upload')->toMediaCollection('ck-media');
+        $media = $model->addMediaFromRequest('upload')->toMediaCollection('ck-media');
 
         return response()->json(['id' => $media->id, 'url' => $media->getUrl()], Response::HTTP_CREATED);
     }

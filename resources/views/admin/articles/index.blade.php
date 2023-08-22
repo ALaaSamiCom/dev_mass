@@ -70,12 +70,14 @@
                                 {{ $article->id ?? '' }}
                             </td>
                             <td>
+{{--                                @dd($article)--}}
                                 @if($article->image)
                                     <a href="{{ $article->image->getUrl() }}" target="_blank"
                                        style="display: inline-block">
                                         <img src="{{ $article->image->getUrl('thumb') }}">
                                     </a>
                                 @endif
+
                             </td>
                             <td>
                                 {{ $article->title_en ?? '' }}

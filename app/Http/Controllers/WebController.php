@@ -113,9 +113,9 @@ class WebController extends Controller
         $projects = Project::all();
         $testimonials = Testimonial::all();
         $articles_query = Article::query();
-        $articles = $articles_query->get();
-        $article = $articles_query->where('id', $id)->first();
-//dd($article);
+        $articles = $articles_query->with('media')->get();
+        $article = $articles_query->with('media')->where('id', $id)->first();
+//dd(Article::with('media')->get());
         $services = Service::all();
 
         return view('NewWeb.blog_details', compact('sections', 'about_us_section', 'projects', 'testimonials', 'services'

@@ -12,7 +12,7 @@
                 <div class="form-group">
                     <label class="required" for="image">{{ trans('cruds.article.fields.image') }}</label>
                     <div class="needsclick dropzone {{ $errors->has('image') ? 'is-invalid' : '' }}"
-                         id="image-dropzone">
+                         id="imageDropzone1" name="image">
                     </div>
                     @if($errors->has('image'))
                         <div class="invalid-feedback">
@@ -122,7 +122,7 @@
                 <div class="form-group">
                     <label for="author_image">{{ trans('cruds.article.fields.author_image') }}</label>
                     <div class="needsclick dropzone {{ $errors->has('author_image') ? 'is-invalid' : '' }}"
-                         id="image-dropzone">
+                         id="imageDropzone2" name="author_image">
                     </div>
                     @if($errors->has('author_image'))
                         <div class="invalid-feedback">
@@ -144,59 +144,118 @@
 
 @section('scripts')
     <script>
-        Dropzone.options.imageDropzone = {
-            url: '{{ route('admin.articles.storeMedia') }}',
-            maxFilesize: 500, // MB
-            acceptedFiles: '.jpeg,.jpg,.png,.gif',
-            maxFiles: 1,
-            addRemoveLinks: true,
-            headers: {
-                'X-CSRF-TOKEN': "{{ csrf_token() }}"
-            },
-            params: {
-                size: 500,
-                width: 4096,
-                height: 4096
-            },
-            success: function (file, response) {
-                $('form').find('input[name="image"]').remove()
-                $('form').append('<input type="hidden" name="image" value="' + response.name + '">')
-            },
-            removedfile: function (file) {
-                file.previewElement.remove()
-                if (file.status !== 'error') {
+        Dropzone.autoDiscover = false;
+
+        $(document).ready(function() {
+            // First input
+            var imageDropzone1 = new Dropzone("#imageDropzone1", {
+                url: '{{ route('admin.articles.storeMedia') }}',
+                maxFilesize: 500, // MB
+                acceptedFiles: '.jpeg,.jpg,.png,.gif',
+                maxFiles: 1,
+                addRemoveLinks: true,
+                headers: {
+                    'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                },
+                params: {
+                    size: 500,
+                    width: 4096,
+                    height: 4096
+                },
+                success: function (file, response) {
                     $('form').find('input[name="image"]').remove()
-                    this.options.maxFiles = this.options.maxFiles + 1
-                }
-            },
-            init: function () {
-                @if(isset($article) && $article->image)
-                var file = {!! json_encode($article->image) !!}
-                this.options.addedfile.call(this, file)
-                this.options.thumbnail.call(this, file, file.preview ?? file.preview_url)
-                file.previewElement.classList.add('dz-complete')
-                $('form').append('<input type="hidden" name="image" value="' + file.file_name + '">')
-                this.options.maxFiles = this.options.maxFiles - 1
-                @endif
-            },
-            error: function (file, response) {
-                if ($.type(response) === 'string') {
-                    var message = response //dropzone sends it's own error messages in string
-                } else {
-                    var message = response.errors.file
-                }
-                file.previewElement.classList.add('dz-error')
-                _ref = file.previewElement.querySelectorAll('[data-dz-errormessage]')
-                _results = []
-                for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-                    node = _ref[_i]
-                    _results.push(node.textContent = message)
-                }
+                    $('form').append('<input type="hidden" name="image" value="' + response.name + '">')
+                },
+                removedfile: function (file) {
+                    file.previewElement.remove()
+                    if (file.status !== 'error') {
+                        $('form').find('input[name="image"]').remove()
+                        this.options.maxFiles = this.options.maxFiles + 1
+                    }
+                },
+                init: function () {
+                    @if(isset($article) && $article->image)
+                    var file = {!! json_encode($article->image) !!}
+                    this.options.addedfile.call(this, file)
+                    this.options.thumbnail.call(this, file, file.preview ?? file.preview_url)
+                    file.previewElement.classList.add('dz-complete')
+                    $('form').append('<input type="hidden" name="image" value="' + file.file_name + '">')
+                    this.options.maxFiles = this.options.maxFiles - 1
+                    @endif
+                },
+                error: function (file, response) {
+                    if ($.type(response) === 'string') {
+                        var message = response //dropzone sends it's own error messages in string
+                    } else {
+                        var message = response.errors.file
+                    }
+                    file.previewElement.classList.add('dz-error')
+                    _ref = file.previewElement.querySelectorAll('[data-dz-errormessage]')
+                    _results = []
+                    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+                        node = _ref[_i]
+                        _results.push(node.textContent = message)
+                    }
 
-                return _results
-            }
-        }
+                    return _results
+                }
+            });
 
+            // Second input
+            var imageDropzone2 = new Dropzone("#imageDropzone2", {
+                url: '{{ route('admin.articles.storeMedia') }}',
+                maxFilesize: 500, // MB
+                acceptedFiles: '.jpeg,.jpg,.png,.gif',
+                maxFiles: 1,
+                addRemoveLinks: true,
+                headers: {
+                    'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                },
+                params: {
+                    size: 500,
+                    width: 4096,
+                    height: 4096
+                },
+                success: function (file, response) {
+                    console.log(file,response);
+                    $('form').find('input[name="author_image"]').remove()
+                    $('form').append('<input type="hidden" name="author_image" value="' + response.name + '">')
+                },
+                removedfile: function (file) {
+                    file.previewElement.remove()
+                    if (file.status !== 'error') {
+                        $('form').find('input[name="author_image"]').remove()
+                        this.options.maxFiles = this.options.maxFiles + 1
+                    }
+                },
+                init: function () {
+                    @if(isset($article) && $article->author_image)
+                    var file = {!! json_encode($article->author_image) !!}
+                    this.options.addedfile.call(this, file)
+                    this.options.thumbnail.call(this, file, file.preview ?? file.preview_url)
+                    file.previewElement.classList.add('dz-complete')
+                    $('form').append('<input type="hidden" name="author_image" value="' + file.file_name + '">')
+                    this.options.maxFiles = this.options.maxFiles - 1
+                    @endif
+                },
+                error: function (file, response) {
+                    if ($.type(response) === 'string') {
+                        var message = response //dropzone sends it's own error messages in string
+                    } else {
+                        var message = response.errors.file
+                    }
+                    file.previewElement.classList.add('dz-error')
+                    _ref = file.previewElement.querySelectorAll('[data-dz-errormessage]')
+                    _results = []
+                    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+                        node = _ref[_i]
+                        _results.push(node.textContent = message)
+                    }
+
+                    return _results
+                }
+            });
+        });
     </script>
     <script>
         $(document).ready(function () {

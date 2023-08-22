@@ -1,4 +1,5 @@
 <!-- START HOME -->
+{{--@dd($article2)--}}
 <section>
     <div class="container mt-5">
         <div class="row text-center mb-4">
@@ -7,7 +8,8 @@
         </div>
         <div class="d-flex align-items-center justify-content-between mb-3">
             <div class="d-flex align-items-center mb-3">
-                <img src="{{asset('newweb_assets')}}/images/project1.png" width="60" class="rounded-circle">
+
+                <img src="{{ $article->image->getUrl('thumb') }}" width="60" class="rounded-circle">
                 <div class="mx-3">
                     <h6 class="fw-bold">{!! $article->author_name !!}</h6>
                     <p class="m-0 fs-14 revew">{!! $article->author_job !!}</p>
@@ -22,7 +24,7 @@
             </div>
         </div>
 
-        <img src="{{asset('newweb_assets')}}/images/services.png" class="img-fluid w-100 mb-4 Blog-img"/>
+        <img src="{{ $article->image->getUrl() }}" class="img-fluid w-100 mb-4 Blog-img"/>
         <div class="col-10 mx-auto">
             <p class="mb-5">
                 {!! $article->description !!}

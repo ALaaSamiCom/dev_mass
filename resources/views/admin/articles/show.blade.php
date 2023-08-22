@@ -104,7 +104,7 @@
                             {{ trans('cruds.article.fields.author_image') }}
                         </th>
                         <td>
-                            @if($article->author_image)
+                                @if($article->author_image)
                                 <a href="{{ $article->author_image->getUrl() }}" target="_blank" style="display: inline-block">
                                     <img src="{{ $article->author_image->getUrl('thumb') }}">
                                 </a>
